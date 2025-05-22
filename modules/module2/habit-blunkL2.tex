@@ -1,0 +1,59 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Module 2: Relational Algebra}
+\author{Habit Blunk}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item Find all the students' names enrolled in CS430dl
+    \[
+    \Pi_{\text{sname}} \left( \sigma_{\text{cname = "CS430dl"}} (\text{Class}) \bowtie \text{Enrolled} \bowtie \text {Student} \right)
+    \]
+
+  \item Find all the classes Hans Solo took in the SP16 semester
+    \[
+    \Pi_{\text{cname}} \left( \sigma_{\text{sname = "Hans Solo"}} (\text{Student}) \bowtie \sigma_{\text{esemester = "SP16"}} (\text{Enrolled}) \bowtie \text{Class} \right)
+    \]
+
+  \item Find all the classrooms that are located on the second floor of building A
+    \[
+    \Pi_{\text{crid}} \left( \sigma_{\text{bname = "A"}} (\text{Building}) \bowtie \sigma_{\text{crfloor = 2}} (\text{Classrooms}) \right)
+    \]
+
+  \item Find all the class names that are located in classroom 130
+    \[
+    \Pi_{\text{cname}} \left( \sigma_{\text{crid = 130}} (\text{ClassAssigned}) \bowtie \text{Class} \right)
+    \]
+
+  \item Find all the buildings that have ever had CS430dl in one of their classrooms
+    \[
+    \Pi_{\text{bname}} \left( \sigma_{\text{cname = "CS430dl"}} (\text{Class}) \bowtie \text{ClassAssigned} \bowtie \text{Classrooms} \bowtie \text{Building} \right)
+    \]
+
+  \item Find all the classrooms Alice Wonderland has been in
+    \begin{multline*}
+    \Pi_{\text{crid}} \big( \sigma_{\text{sname = "Alice Wonderland"}} (\text{Student}) \\
+    \Join_{\text{Student.sid} = \text{Enrolled.sid}} \text{Enrolled} \\
+    \Join_{\text{Enrolled.cid} = \text{ClassAssigned.cid}} \text{ClassAssigned} \big) \\
+    \end{multline*}
+
+  \item Find all the students with a CS major that have been in a class in either the "A" or "B" building
+    \begin{multline*}
+    \Pi_{\text{sname}} \big( \sigma_{\text{major = "CS"}} (\text{Student}) \\
+    \bowtie \text{Enrolled} \bowtie \text{ClassAssigned} \bowtie \text{Classrooms} \\
+    \bowtie \sigma_{\text{bname = "A"} \lor \text{bname = "B"}} (\text{Building}) \big) \\
+    \end{multline*}
+
+  \item Find all the classrooms that are in use during the SS21 semester
+    \[
+    \Pi_{\text{crid}} \left( \sigma_{\text{casemester = "SS21"}} (\text{ClassAssigned}) \right)
+    \]
+\end{enumerate}
+
+\end{document}
