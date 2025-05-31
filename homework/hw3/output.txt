@@ -1,0 +1,536 @@
+MariaDB [jmaster]> use information_schema 
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [information_schema]> use information_schema;
+Database changed
+MariaDB [information_schema]> show tables
+    -> Ctrl-C -- exit!
+Aborted
+MariaDB [jmaster]> source assignment.sql;
+Show warnings enabled.
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jmaster            |
++--------------------+
+2 rows in set (0.003 sec)
+
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
++----------------------+
+| Tables_in_jmaster    |
++----------------------+
+| current_dept_emp     |
+| departments          |
+| dept_emp             |
+| dept_emp_latest_date |
+| dept_manager         |
+| employees            |
+| salaries             |
+| titles               |
++----------------------+
+8 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.245 sec)
+
+Query OK, 0 rows affected (0.067 sec)
+
+Query OK, 0 rows affected (0.074 sec)
+
+Query OK, 0 rows affected (0.060 sec)
+
+Query OK, 0 rows affected (0.070 sec)
+
+Query OK, 0 rows affected (0.080 sec)
+
+Query OK, 0 rows affected (0.059 sec)
+
+Query OK, 0 rows affected (0.018 sec)
+
+Query OK, 0 rows affected (0.031 sec)
+
++----------------------+
+| Tables_in_jmaster    |
++----------------------+
+| current_dept_emp     |
+| departments          |
+| dept_emp             |
+| dept_emp_latest_date |
+| dept_manager         |
+| employees            |
+| salaries             |
+| titles               |
++----------------------+
+8 rows in set (0.001 sec)
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' dept_manager, titles, salaries, employees, departments' at line 1
++---------------------+
+| INFO                |
++---------------------+
+| LOADING departments |
++---------------------+
+1 row in set (0.001 sec)
+
+Query OK, 9 rows affected (0.012 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
++-------------------+
+| INFO              |
++-------------------+
+| LOADING employees |
++-------------------+
+1 row in set (0.001 sec)
+
+Query OK, 124 rows affected (0.022 sec)
+Records: 124  Duplicates: 0  Warnings: 0
+
++------------------+
+| INFO             |
++------------------+
+| LOADING dept_emp |
++------------------+
+1 row in set (0.001 sec)
+
+Query OK, 134 rows affected (0.010 sec)
+Records: 134  Duplicates: 0  Warnings: 0
+
++----------------------+
+| INFO                 |
++----------------------+
+| LOADING dept_manager |
++----------------------+
+1 row in set (0.001 sec)
+
+Query OK, 24 rows affected (0.013 sec)
+Records: 24  Duplicates: 0  Warnings: 0
+
++----------------+
+| INFO           |
++----------------+
+| LOADING titles |
++----------------+
+1 row in set (0.001 sec)
+
+Query OK, 205 rows affected (0.040 sec)
+Records: 205  Duplicates: 0  Warnings: 0
+
++------------------+
+| INFO             |
++------------------+
+| LOADING salaries |
++------------------+
+1 row in set (0.001 sec)
+
+Query OK, 1386 rows affected (0.063 sec)
+Records: 1386  Duplicates: 0  Warnings: 0
+
++--------+--------------+--------------------+
+| emp_no | last_name    | dept_name          |
++--------+--------------+--------------------+
+|  10001 | Facello      | Development        |
+|  10002 | Simmel       | Sales              |
+|  10003 | Bamford      | Production         |
+|  10004 | Koblick      | Production         |
+|  10005 | Maliniak     | Human Resources    |
+|  10006 | Preusig      | Development        |
+|  10007 | Zielinski    | Research           |
+|  10008 | Kalloufi     | Development        |
+|  10009 | Peac         | Quality Management |
+|  10010 | Piveteau     | Quality Management |
+|  10010 | Piveteau     | Production         |
+|  10011 | Sluis        | Customer Service   |
+|  10012 | Bridgland    | Development        |
+|  10013 | Terkki       | Human Resources    |
+|  10014 | Genin        | Development        |
+|  10015 | Nooteboom    | Research           |
+|  10016 | Cappelletti  | Sales              |
+|  10017 | Bouloucos    | Marketing          |
+|  10018 | Peha         | Development        |
+|  10018 | Peha         | Production         |
+|  10019 | Haddadi      | Research           |
+|  10020 | Warwick      | Production         |
+|  10021 | Erde         | Development        |
+|  10022 | Famili       | Development        |
+|  10023 | Montemayor   | Development        |
+|  10024 | Pettey       | Production         |
+|  10025 | Heyers       | Development        |
+|  10026 | Berztiss     | Production         |
+|  10027 | Reistad      | Development        |
+|  10028 | Tempesti     | Development        |
+|  10029 | Herbst       | Quality Management |
+|  10029 | Herbst       | Production         |
+|  10030 | Demeyer      | Production         |
+|  10031 | Joslin       | Development        |
+|  10032 | Reistad      | Production         |
+|  10033 | Merlo        | Quality Management |
+|  10034 | Swan         | Sales              |
+|  10035 | Chappelet    | Production         |
+|  10036 | Portugali    | Human Resources    |
+|  10037 | Makrucki     | Development        |
+|  10038 | Lortz        | Customer Service   |
+|  10039 | Brender      | Human Resources    |
+|  10040 | Meriste      | Research           |
+|  10040 | Meriste      | Development        |
+|  10041 | Lenart       | Sales              |
+|  10042 | Stamatiou    | Finance            |
+|  10043 | Tzvieli      | Development        |
+|  10044 | Casley       | Production         |
+|  10045 | Shanbhogue   | Production         |
+|  10046 | Rosenbaum    | Research           |
+|  10047 | Nyanchama    | Production         |
+|  10048 | Syrotiuk     | Development        |
+|  10049 | Tramer       | Customer Service   |
+|  10050 | Dredge       | Sales              |
+|  10050 | Dredge       | Finance            |
+|  10051 | Caine        | Production         |
+|  10052 | Nitsch       | Research           |
+|  10053 | Zschoche     | Sales              |
+|  10054 | Schueller    | Human Resources    |
+|  10055 | Dredge       | Marketing          |
+|  10056 | Bernini      | Development        |
+|  10057 | Callaway     | Development        |
+|  10058 | McFarlin     | Marketing          |
+|  10059 | McAlpine     | Finance            |
+|  10060 | Billingsley  | Customer Service   |
+|  10060 | Billingsley  | Sales              |
+|  10061 | Herber       | Sales              |
+|  10062 | Peyn         | Development        |
+|  10063 | Leonhardt    | Production         |
+|  10064 | Jansch       | Research           |
+|  10065 | Awdeh        | Development        |
+|  10066 | Schusler     | Development        |
+|  10067 | Stavenow     | Quality Management |
+|  10068 | Brattka      | Sales              |
+|  10069 | Bierman      | Production         |
+|  10070 | Garigliano   | Research           |
+|  10070 | Garigliano   | Development        |
+|  10071 | Lipner       | Human Resources    |
+|  10072 | Sidou        | Development        |
+|  10073 | McClurg      | Quality Management |
+|  10074 | Bernatsky    | Development        |
+|  10075 | Dolinsky     | Development        |
+|  10076 | Ritzmann     | Development        |
+|  10077 | Azuma        | Human Resources    |
+|  10078 | Mondadori    | Development        |
+|  10079 | Gils         | Development        |
+|  10080 | Baek         | Finance            |
+|  10080 | Baek         | Human Resources    |
+|  10081 | Rosen        | Production         |
+|  10082 | Lortz        | Research           |
+|  10083 | Zockler      | Production         |
+|  10084 | Kalloufi     | Production         |
+|  10085 | Malabarba    | Production         |
+|  10086 | Foote        | Human Resources    |
+|  10087 | Eugenio      | Sales              |
+|  10088 | Syrzycki     | Sales              |
+|  10088 | Syrzycki     | Customer Service   |
+|  10089 | Flasterstein | Sales              |
+|  10090 | Hofting      | Development        |
+|  10091 | Gomatam      | Development        |
+|  10092 | Niizuma      | Development        |
+|  10093 | Desikan      | Sales              |
+|  10094 | Ossenbruggen | Research           |
+|  10095 | Morton       | Sales              |
+|  10096 | Mandell      | Production         |
+|  10097 | Waschkowski  | Research           |
+|  10098 | Servieres    | Customer Service   |
+|  10098 | Servieres    | Production         |
+|  10099 | Sullins      | Sales              |
+| 110000 | Herath       | Development        |
+| 110022 | Markovitch   | Marketing          |
+| 110039 | Minakawa     | Marketing          |
+| 110085 | Alpin        | Finance            |
+| 110114 | Legleitner   | Finance            |
+| 110183 | Ossenbruggen | Human Resources    |
+| 110228 | Sigstam      | Human Resources    |
+| 110303 | Wegerle      | Production         |
+| 110344 | Cools        | Production         |
+| 110386 | Kieras       | Production         |
+| 110420 | Ghazalie     | Production         |
+| 110511 | Hagimont     | Development        |
+| 110567 | DasSarma     | Development        |
+| 110725 | Onuegbe      | Quality Management |
+| 110765 | Hofmeyr      | Quality Management |
+| 110800 | Quadeer      | Quality Management |
+| 110854 | Pesch        | Quality Management |
+| 111035 | Kaelbling    | Sales              |
+| 111133 | Zhang        | Sales              |
+| 111400 | Staelin      | Research           |
+| 111534 | Kambil       | Research           |
+| 111692 | Butterworth  | Customer Service   |
+| 111784 | Giarratana   | Customer Service   |
+| 111877 | Spinelli     | Customer Service   |
+| 111939 | Weedman      | Customer Service   |
++--------+--------------+--------------------+
+134 rows in set (0.002 sec)
+
++--------+--------------+--------------------+
+| emp_no | last_name    | dept_name          |
++--------+--------------+--------------------+
+|  10011 | Sluis        | Customer Service   |
+|  10038 | Lortz        | Customer Service   |
+|  10049 | Tramer       | Customer Service   |
+|  10060 | Billingsley  | Customer Service   |
+|  10088 | Syrzycki     | Customer Service   |
+|  10098 | Servieres    | Customer Service   |
+| 111692 | Butterworth  | Customer Service   |
+| 111784 | Giarratana   | Customer Service   |
+| 111877 | Spinelli     | Customer Service   |
+| 111939 | Weedman      | Customer Service   |
+|  10001 | Facello      | Development        |
+|  10006 | Preusig      | Development        |
+|  10008 | Kalloufi     | Development        |
+|  10012 | Bridgland    | Development        |
+|  10014 | Genin        | Development        |
+|  10021 | Erde         | Development        |
+|  10022 | Famili       | Development        |
+|  10023 | Montemayor   | Development        |
+|  10025 | Heyers       | Development        |
+|  10027 | Reistad      | Development        |
+|  10028 | Tempesti     | Development        |
+|  10031 | Joslin       | Development        |
+|  10037 | Makrucki     | Development        |
+|  10043 | Tzvieli      | Development        |
+|  10048 | Syrotiuk     | Development        |
+|  10056 | Bernini      | Development        |
+|  10057 | Callaway     | Development        |
+|  10062 | Peyn         | Development        |
+|  10065 | Awdeh        | Development        |
+|  10066 | Schusler     | Development        |
+|  10072 | Sidou        | Development        |
+|  10074 | Bernatsky    | Development        |
+|  10075 | Dolinsky     | Development        |
+|  10076 | Ritzmann     | Development        |
+|  10078 | Mondadori    | Development        |
+|  10079 | Gils         | Development        |
+|  10090 | Hofting      | Development        |
+|  10091 | Gomatam      | Development        |
+|  10092 | Niizuma      | Development        |
+| 110000 | Herath       | Development        |
+| 110511 | Hagimont     | Development        |
+| 110567 | DasSarma     | Development        |
+|  10042 | Stamatiou    | Finance            |
+|  10059 | McAlpine     | Finance            |
+| 110085 | Alpin        | Finance            |
+| 110114 | Legleitner   | Finance            |
+|  10005 | Maliniak     | Human Resources    |
+|  10013 | Terkki       | Human Resources    |
+|  10036 | Portugali    | Human Resources    |
+|  10039 | Brender      | Human Resources    |
+|  10054 | Schueller    | Human Resources    |
+|  10071 | Lipner       | Human Resources    |
+|  10077 | Azuma        | Human Resources    |
+|  10080 | Baek         | Human Resources    |
+|  10086 | Foote        | Human Resources    |
+| 110183 | Ossenbruggen | Human Resources    |
+| 110228 | Sigstam      | Human Resources    |
+|  10017 | Bouloucos    | Marketing          |
+|  10055 | Dredge       | Marketing          |
+|  10058 | McFarlin     | Marketing          |
+| 110022 | Markovitch   | Marketing          |
+| 110039 | Minakawa     | Marketing          |
+|  10003 | Bamford      | Production         |
+|  10004 | Koblick      | Production         |
+|  10018 | Peha         | Production         |
+|  10020 | Warwick      | Production         |
+|  10024 | Pettey       | Production         |
+|  10026 | Berztiss     | Production         |
+|  10030 | Demeyer      | Production         |
+|  10032 | Reistad      | Production         |
+|  10035 | Chappelet    | Production         |
+|  10044 | Casley       | Production         |
+|  10045 | Shanbhogue   | Production         |
+|  10047 | Nyanchama    | Production         |
+|  10051 | Caine        | Production         |
+|  10063 | Leonhardt    | Production         |
+|  10069 | Bierman      | Production         |
+|  10081 | Rosen        | Production         |
+|  10083 | Zockler      | Production         |
+|  10084 | Kalloufi     | Production         |
+|  10085 | Malabarba    | Production         |
+|  10096 | Mandell      | Production         |
+| 110303 | Wegerle      | Production         |
+| 110344 | Cools        | Production         |
+| 110386 | Kieras       | Production         |
+| 110420 | Ghazalie     | Production         |
+|  10009 | Peac         | Quality Management |
+|  10010 | Piveteau     | Quality Management |
+|  10029 | Herbst       | Quality Management |
+|  10033 | Merlo        | Quality Management |
+|  10067 | Stavenow     | Quality Management |
+|  10073 | McClurg      | Quality Management |
+| 110725 | Onuegbe      | Quality Management |
+| 110765 | Hofmeyr      | Quality Management |
+| 110800 | Quadeer      | Quality Management |
+| 110854 | Pesch        | Quality Management |
+|  10007 | Zielinski    | Research           |
+|  10015 | Nooteboom    | Research           |
+|  10019 | Haddadi      | Research           |
+|  10040 | Meriste      | Research           |
+|  10046 | Rosenbaum    | Research           |
+|  10052 | Nitsch       | Research           |
+|  10064 | Jansch       | Research           |
+|  10070 | Garigliano   | Research           |
+|  10082 | Lortz        | Research           |
+|  10094 | Ossenbruggen | Research           |
+|  10097 | Waschkowski  | Research           |
+| 111400 | Staelin      | Research           |
+| 111534 | Kambil       | Research           |
+|  10002 | Simmel       | Sales              |
+|  10016 | Cappelletti  | Sales              |
+|  10034 | Swan         | Sales              |
+|  10041 | Lenart       | Sales              |
+|  10050 | Dredge       | Sales              |
+|  10053 | Zschoche     | Sales              |
+|  10061 | Herber       | Sales              |
+|  10068 | Brattka      | Sales              |
+|  10087 | Eugenio      | Sales              |
+|  10089 | Flasterstein | Sales              |
+|  10093 | Desikan      | Sales              |
+|  10095 | Morton       | Sales              |
+|  10099 | Sullins      | Sales              |
+| 111035 | Kaelbling    | Sales              |
+| 111133 | Zhang        | Sales              |
++--------+--------------+--------------------+
+124 rows in set (0.004 sec)
+
++--------+--------------+--------------------+
+| emp_no | last_name    | dept_name          |
++--------+--------------+--------------------+
+|  10001 | Facello      | Development        |
+|  10002 | Simmel       | Sales              |
+|  10003 | Bamford      | Production         |
+|  10004 | Koblick      | Production         |
+|  10005 | Maliniak     | Human Resources    |
+|  10006 | Preusig      | Development        |
+|  10007 | Zielinski    | Research           |
+|  10008 | Kalloufi     | Development        |
+|  10009 | Peac         | Quality Management |
+|  10010 | Piveteau     | Quality Management |
+|  10011 | Sluis        | Customer Service   |
+|  10012 | Bridgland    | Development        |
+|  10013 | Terkki       | Human Resources    |
+|  10014 | Genin        | Development        |
+|  10015 | Nooteboom    | Research           |
+|  10016 | Cappelletti  | Sales              |
+|  10017 | Bouloucos    | Marketing          |
+|  10018 | Peha         | Production         |
+|  10019 | Haddadi      | Research           |
+|  10020 | Warwick      | Production         |
+|  10021 | Erde         | Development        |
+|  10022 | Famili       | Development        |
+|  10023 | Montemayor   | Development        |
+|  10024 | Pettey       | Production         |
+|  10025 | Heyers       | Development        |
+|  10026 | Berztiss     | Production         |
+|  10027 | Reistad      | Development        |
+|  10028 | Tempesti     | Development        |
+|  10029 | Herbst       | Quality Management |
+|  10030 | Demeyer      | Production         |
+|  10031 | Joslin       | Development        |
+|  10032 | Reistad      | Production         |
+|  10033 | Merlo        | Quality Management |
+|  10034 | Swan         | Sales              |
+|  10035 | Chappelet    | Production         |
+|  10036 | Portugali    | Human Resources    |
+|  10037 | Makrucki     | Development        |
+|  10038 | Lortz        | Customer Service   |
+|  10039 | Brender      | Human Resources    |
+|  10040 | Meriste      | Research           |
+|  10041 | Lenart       | Sales              |
+|  10042 | Stamatiou    | Finance            |
+|  10043 | Tzvieli      | Development        |
+|  10044 | Casley       | Production         |
+|  10045 | Shanbhogue   | Production         |
+|  10046 | Rosenbaum    | Research           |
+|  10047 | Nyanchama    | Production         |
+|  10048 | Syrotiuk     | Development        |
+|  10049 | Tramer       | Customer Service   |
+|  10050 | Dredge       | Sales              |
+|  10051 | Caine        | Production         |
+|  10052 | Nitsch       | Research           |
+|  10053 | Zschoche     | Sales              |
+|  10054 | Schueller    | Human Resources    |
+|  10055 | Dredge       | Marketing          |
+|  10056 | Bernini      | Development        |
+|  10057 | Callaway     | Development        |
+|  10058 | McFarlin     | Marketing          |
+|  10059 | McAlpine     | Finance            |
+|  10060 | Billingsley  | Customer Service   |
+|  10061 | Herber       | Sales              |
+|  10062 | Peyn         | Development        |
+|  10063 | Leonhardt    | Production         |
+|  10064 | Jansch       | Research           |
+|  10065 | Awdeh        | Development        |
+|  10066 | Schusler     | Development        |
+|  10067 | Stavenow     | Quality Management |
+|  10068 | Brattka      | Sales              |
+|  10069 | Bierman      | Production         |
+|  10070 | Garigliano   | Research           |
+|  10071 | Lipner       | Human Resources    |
+|  10072 | Sidou        | Development        |
+|  10073 | McClurg      | Quality Management |
+|  10074 | Bernatsky    | Development        |
+|  10075 | Dolinsky     | Development        |
+|  10076 | Ritzmann     | Development        |
+|  10077 | Azuma        | Human Resources    |
+|  10078 | Mondadori    | Development        |
+|  10079 | Gils         | Development        |
+|  10080 | Baek         | Human Resources    |
+|  10081 | Rosen        | Production         |
+|  10082 | Lortz        | Research           |
+|  10083 | Zockler      | Production         |
+|  10084 | Kalloufi     | Production         |
+|  10085 | Malabarba    | Production         |
+|  10086 | Foote        | Human Resources    |
+|  10087 | Eugenio      | Sales              |
+|  10088 | Syrzycki     | Customer Service   |
+|  10089 | Flasterstein | Sales              |
+|  10090 | Hofting      | Development        |
+|  10091 | Gomatam      | Development        |
+|  10092 | Niizuma      | Development        |
+|  10093 | Desikan      | Sales              |
+|  10094 | Ossenbruggen | Research           |
+|  10095 | Morton       | Sales              |
+|  10096 | Mandell      | Production         |
+|  10097 | Waschkowski  | Research           |
+|  10098 | Servieres    | Customer Service   |
+|  10099 | Sullins      | Sales              |
+| 110000 | Herath       | Development        |
+| 110022 | Markovitch   | Marketing          |
+| 110039 | Minakawa     | Marketing          |
+| 110085 | Alpin        | Finance            |
+| 110114 | Legleitner   | Finance            |
+| 110183 | Ossenbruggen | Human Resources    |
+| 110228 | Sigstam      | Human Resources    |
+| 110303 | Wegerle      | Production         |
+| 110344 | Cools        | Production         |
+| 110386 | Kieras       | Production         |
+| 110420 | Ghazalie     | Production         |
+| 110511 | Hagimont     | Development        |
+| 110567 | DasSarma     | Development        |
+| 110725 | Onuegbe      | Quality Management |
+| 110765 | Hofmeyr      | Quality Management |
+| 110800 | Quadeer      | Quality Management |
+| 110854 | Pesch        | Quality Management |
+| 111035 | Kaelbling    | Sales              |
+| 111133 | Zhang        | Sales              |
+| 111400 | Staelin      | Research           |
+| 111534 | Kambil       | Research           |
+| 111692 | Butterworth  | Customer Service   |
+| 111784 | Giarratana   | Customer Service   |
+| 111877 | Spinelli     | Customer Service   |
+| 111939 | Weedman      | Customer Service   |
++--------+--------------+--------------------+
+124 rows in set (0.004 sec)
+
+MariaDB [jmaster]> notee
