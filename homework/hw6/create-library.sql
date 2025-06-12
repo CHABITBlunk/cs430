@@ -1,3 +1,4 @@
+drop view if exists borrowed_by;
 drop table if exists member, book, publisher, author, phone, borrowed;
 
 create table member (
