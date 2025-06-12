@@ -40,7 +40,7 @@ create table author (
 
 create table borrowed (
   member_id       int           not null,
-  isbn            varchar(15)   not null,
+  isbn            varchar(20)   not null,
   checkout_date   date          not null default current_date,
   checkin_date    date,
   primary key(member_id, isbn, checkout_date),
