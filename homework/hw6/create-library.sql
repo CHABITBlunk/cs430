@@ -14,7 +14,9 @@ create table book (
   isbn            varchar(15) not null,
   title           varchar(35) not null,
   year_published  date        not null,
+  pub_id          int         not null,
   primary key(isbn)
+  foreign key(pub_id) references publisher(pub_id)
 );
 
 create table publisher (
@@ -48,3 +50,4 @@ create table borrowed (
 
 create or replace sql security invoker view borrowed_by as
   select isbn, member_id, checkin_date, checkout_date from borrowed;
+
