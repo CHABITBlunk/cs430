@@ -24,8 +24,8 @@ create table publisher (
 );
 
 create table phone (
-  p_number    int         not null,
-  phone_type  varchar(20) not null,
+  p_number    varchar(12),
+  phone_type  varchar(15),
   primary key(p_number)
 );
 
