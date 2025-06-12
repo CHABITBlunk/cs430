@@ -36,6 +36,11 @@ update raw_lines set tag_member_id = (
 )
 order by line_id;
 
+select distinct tag_member_id
+from raw_lines
+where raw_line like ' %'
+and tag_member_id not in (select member_id from member);
+
 insert into borrowed (member_id, isbn, checkout_date, checkin_date)
 select
   tag_member_id, substring_index(raw_line, ',', 1) as isbn,
