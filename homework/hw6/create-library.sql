@@ -1,4 +1,4 @@
-drop table if exists member, book, publisher, author, phone;
+drop table if exists member, book, publisher, author, phone, borrowed;
 
 create table member (
   member_id   int           not null,
