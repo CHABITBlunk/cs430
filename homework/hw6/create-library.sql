@@ -15,7 +15,7 @@ create table book (
   title           varchar(35) not null,
   year_published  date        not null,
   pub_id          int         not null,
-  primary key(isbn)
+  primary key(isbn),
   foreign key(pub_id) references publisher(pub_id)
 );
 
