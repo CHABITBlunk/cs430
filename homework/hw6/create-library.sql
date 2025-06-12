@@ -11,9 +11,9 @@ create table member (
 );
 
 create table book (
-  isbn            int         not null,
+  isbn            varchar(15) not null,
   title           varchar(35) not null,
-  year_published  date         not null,
+  year_published  date        not null,
   primary key(isbn)
 );
 
