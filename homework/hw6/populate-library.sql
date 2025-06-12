@@ -38,7 +38,7 @@ order by line_id;
 
 insert into borrowed (member_id, isbn, checkout_date, checkin_date)
 select
-  tag_member_id, substring_index(raw_line, ',', 1) as isbn,
+  tag_member_id, trim(substring_index(raw_line, ',', 1)) as isbn,
   str_to_date(substring_index(substring_index(raw_line, ',',  2), ',', -1), '%m/%d/%Y') as checkout_date,
   str_to_date(substring_index(raw_line, ',', -1) ,'%m/%d/%Y') as checkin_date
 from raw_lines where raw_line like ' %';
