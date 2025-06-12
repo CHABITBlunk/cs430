@@ -18,20 +18,20 @@ insert into member (member_id, first_name, last_name, dob)
   substring_index(substring_index(raw_line, ',', 2), ',', -1) as first_name,
   substring_index(substring_index(raw_line, ',', 3), ',', -1) as last_name,
   str_to_date(substring_index(raw_line, ',', -1), '%m/%d/%Y') as dob
-from raw_lines where raw_line not like ' %';
+from raw_lines where length(raw_line) - length(replace(raw_line, ',', '')) = 3;
 
 alter table raw_lines add column tag_member_id int;
 
 update raw_lines
 set tag_member_id = cast(substring_index(raw_line, ',', 1) as unsigned)
-where raw_line not like ' %';
+where raw_line rlike '^[0-9]+,';
 
 set @last_member_id = null;
 
 update raw_lines set tag_member_id = (
   case
     when raw_line not like ' %' then @last_member_id := tag_member_id
-    else last_member_id
+    else @last_member_id
   end
 )
 order by line_id;
