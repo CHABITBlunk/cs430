@@ -4,12 +4,12 @@ load data local infile 'Book.csv' into table book fields terminated by ',' lines
 
 load data local infile 'Author.csv' into table author fields terminated by ',' lines terminated by '\n' (author_id, first_name, last_name);
 
-create table members_raw_lines (
+create table raw_lines (
   line_id int auto_increment primary key,
   raw_line text
 );
 
-load data local infile 'Members.csv' into table members_raw_lines lines terminated by '\n' (raw_line);
+load data local infile 'Members.csv' into table raw_lines lines terminated by '\n' (raw_line);
 
 insert into member (member_id, first_name, last_name, dob)
   select cast(substring_index(raw_line, ',', 1) as unsigned) as member_id,
