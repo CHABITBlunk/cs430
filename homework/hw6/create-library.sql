@@ -13,7 +13,7 @@ create table member (
 create table book (
   isbn            int         not null,
   title           varchar(35) not null,
-  year_published  int         not null,
+  year_published  date        not null,
   primary key(isbn)
 );
 
