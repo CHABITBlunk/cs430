@@ -4,6 +4,8 @@ load data local infile 'Book.csv' into table book fields terminated by ',' lines
 
 load data local infile 'Author.csv' into table author fields terminated by ',' lines terminated by '\n' (author_id, first_name, last_name);
 
+drop table if exists raw_lines;
+
 create table raw_lines (
   line_id int auto_increment primary key,
   raw_line text
