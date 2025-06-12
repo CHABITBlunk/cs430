@@ -18,7 +18,7 @@ insert into member (member_id, first_name, last_name, dob)
   substring_index(substring_index(raw_line, ',', 2), ',', -1) as first_name,
   substring_index(substring_index(raw_line, ',', 3), ',', -1) as last_name,
   str_to_date(substring_index(raw_line, ',', -1), '%m/%d/%Y') as dob
-from raw_lines where length(raw_line) - length(replace(raw_line, ',', '')) = 3;
+from raw_lines where length(raw_line) - length(replace(raw_line, ',', '')) = 4;
 
 alter table raw_lines add column tag_member_id int;
 
@@ -41,9 +41,14 @@ from raw_lines
 where raw_line like ' %'
 and tag_member_id not in (select member_id from member);
 
+select count(*) from raw_lines
+where raw_line like ' %' and tag_member_id is null;
+
 insert into borrowed (member_id, isbn, checkout_date, checkin_date)
 select
   tag_member_id, substring_index(raw_line, ',', 1) as isbn,
   str_to_date(substring_index(substring_index(raw_line, ',',  2), ',', -1), '%m/%d/%Y') as checkout_date,
   str_to_date(substring_index(raw_line, ',', -1) ,'%m/%d/%Y') as checkin_date
 from raw_lines where raw_line like ' %';
+
+select b.* from ( select tag_member_id as member_id, substring_index(raw_line, ',', 1) as isbn, str_to_date(substring_index(substring_index(raw_line, ',', 2), ',', -1), '%m/%d/%Y') as checkout_date, str_to_date(substring_index(raw_line, ',', -1), '%m/%d/%Y') as checkin_date from raw_lines where raw_line like ' %') b left join member m on b.member_id = m.member_id where m.member_id is null;
