@@ -2,6 +2,12 @@ drop view if exists borrowed_by;
 drop table if exists borrowed;
 drop table if exists member, book, publisher, author, phone;
 
+create table publisher (
+  pub_id    int         not null,
+  pub_name  varchar(25) not null,
+  primary key(pub_id)
+);
+
 create table member (
   member_id   int           not null,
   first_name  varchar(10)   not null,
@@ -17,12 +23,6 @@ create table book (
   pub_id          int         not null,
   primary key(isbn),
   foreign key(pub_id) references publisher(pub_id)
-);
-
-create table publisher (
-  pub_id    int         not null,
-  pub_name  varchar(25) not null,
-  primary key(pub_id)
 );
 
 create table phone (
