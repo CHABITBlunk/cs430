@@ -4,30 +4,34 @@ create table member (
   member_id   int           not null,
   first_name  varchar(10)   not null,
   last_name   varchar(10)   not null,
-  dob         date          not null
-  PRIMARY KEY(member_id)
+  dob         date          not null,
+  primary key(member_id)
 );
 
 create table book (
   isbn            int         not null,
   title           varchar(35) not null,
-  year_published  int         not null
+  year_published  int         not null,
+  primary key(isbn)
 );
 
 create table publisher (
   pub_id    int         not null,
-  pub_name  varchar(25) not null
+  pub_name  varchar(25) not null,
+  primary key(pub_id)
 );
 
 create table phone (
   p_number    int         not null,
-  phone_type  varchar(20) not null
+  phone_type  varchar(20) not null,
+  primary key(p_number)
 );
 
 create table author (
   author_id   int not null,
   first_name  varchar(10),
-  last_name   varchar(10)
+  last_name   varchar(10),
+  primary key(author_id)
 );
 
 create table borrowed (
