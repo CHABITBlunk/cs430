@@ -40,5 +40,3 @@ select
   str_to_date(substring_index(substring_index(raw_line, ',',  2), ',', -1), '%m/%d/%Y') as checkout_date,
   str_to_date(substring_index(raw_line, ',', -1) ,'%m/%d/%Y') as checkin_date
 from raw_lines where raw_line like ' %';
-
-load data local infile 'Borrowed.csv' into table borrowed fields terminated by ',' lines terminated by '\n' (isbn, )
