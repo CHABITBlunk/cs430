@@ -31,7 +31,7 @@ create table book (
 
 create table phone (
   p_number    varchar(12) not null,
-  phone_type  char,
+  phone_type  varchar(10),
   primary key(p_number)
 );
 
