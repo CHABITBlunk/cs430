@@ -6,10 +6,11 @@ select * from phone order by p_number;
 
 select * from phone_owner;
 select * from borrowed;
+select * from book_author;
 
 select first_name, last_name from member where last_name like 'B%';
 
-select * from book b
+select b.isbn, b.title, b.year_published from book b
 join publisher p on b.pub_id = p.pub_id
 where p.pub_name = 'Coyote Publishing' order by b.title;
 
