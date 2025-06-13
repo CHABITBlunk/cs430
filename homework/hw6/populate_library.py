@@ -25,9 +25,9 @@ with open("Author.csv") as f:
                 type_code, "unknown"
             )
 
-            print(f"insert into phone values ('{p_number}', '{phone_type}');")
+            print(f"insert ignore into phone values ('{p_number}', '{phone_type}');")
             print(
-                f"insert into phone_owner values ('{p_number}', 'author', {author_id});"
+                f"insert ignore into phone_owner values ('{p_number}', 'author', {author_id});"
             )
 
 with open("Publisher.csv") as f:
@@ -48,9 +48,9 @@ with open("Publisher.csv") as f:
                 type_code, "unknown"
             )
 
-            print(f"insert into phone values ('{p_number}', '{phone_type}');")
+            print(f"insert ignore into phone values ('{p_number}', '{phone_type}');")
             print(
-                f"insert into phone_owner values ('{p_number}', 'publisher', {publisher_id});"
+                f"insert ignore into phone_owner values ('{p_number}', 'publisher', {publisher_id});"
             )
 
 with open("Book.csv") as f:
@@ -108,7 +108,7 @@ with open("Members.csv") as f:
         first = row[1].strip().replace("'", "''")
         last = row[2].strip().replace("'", "''")
         dob = sql_date(row[4])
-        print(f"insert into member values ({member_id}, {first}, {last}, {dob});")
+        print(f"insert into member values ({member_id}, '{first}', '{last}', '{dob}');")
 
 with open("Members.csv") as f:
     current_member_id = None
