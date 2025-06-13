@@ -1,3 +1,5 @@
+set FOREIGN_KEY_CHECKS = 0;
+
 drop view if exists borrowed_by;
 drop table if exists borrowed;
 drop table if exists book_author;
