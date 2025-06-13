@@ -1,6 +1,6 @@
 drop view if exists borrowed_by;
 drop table if exists borrowed;
-drop table if exists member, book, publisher, author, phone;
+drop table if exists member, book, publisher, author, phone, phone_owner;
 
 create table publisher (
   pub_id    int         not null,
