@@ -21,14 +21,23 @@ create table book (
   title           varchar(35) not null,
   year_published  date        not null,
   pub_id          int         not null,
+  author_id
   primary key(isbn),
   foreign key(pub_id) references publisher(pub_id)
 );
 
 create table phone (
-  p_number    varchar(12),
-  phone_type  varchar(15),
+  p_number    varchar(12) not null,
+  phone_type  char,
   primary key(p_number)
+);
+
+create table phone_owner (
+  p_number varchar(12) not null,
+  owner_type varchar(10) not null,
+  owner_id int not null,
+  primary key (p_number, owner_type, owner_id),
+  foreign key (p_number) references phone(p_number)
 );
 
 create table author (
@@ -36,6 +45,14 @@ create table author (
   first_name  varchar(10),
   last_name   varchar(10),
   primary key(author_id)
+);
+
+create table book_author (
+  isbn  varchar(15) not null,
+  author_id int     not null,
+  primary key (isbn, author_id),
+  foreign key (isbn) references book(isbn)
+  foreign key (author_id) references author(author_id)
 );
 
 create table borrowed (
@@ -47,7 +64,3 @@ create table borrowed (
   foreign key(member_id) references member(member_id),
   foreign key(isbn) references book(isbn)
 );
-
-create or replace sql security invoker view borrowed_by as
-  select isbn, member_id, checkin_date, checkout_date from borrowed;
-
