@@ -33,7 +33,6 @@ with open("Author.csv") as f:
         for i in range(0, len(phones), 2):
             if i + 1 >= len(phones) or phones[i] == "None":
                 continue
-
             p_number = phones[i]
             type_code = phones[i + 1].strip("()").lower()
             phone_type = {"c": "cell", "h": "home", "o": "office"}.get(
@@ -57,7 +56,6 @@ with open("Publisher.csv") as f:
         for i in range(0, len(phones), 2):
             if i + 1 >= len(phones) or phones[i] == "None":
                 continue
-
             p_number = phones[i]
             type_code = phones[i + 1].strip("()").lower()
             phone_type = {"c": "cell", "h": "home", "o": "office"}.get(
@@ -76,12 +74,10 @@ for lib_name in libraries:
             line = line.rstrip("\n")
             if not line.strip():
                 continue
-
             if not line.startswith("  "):
                 parts = line.split(",")
                 if len(parts) < 7:
                     continue
-
                 isbn = parts[0]
                 num_copies = int(parts[1])
                 shelf_no = int(parts[2])
@@ -100,7 +96,6 @@ for lib_name in libraries:
                 )
             else:
                 continue
-
     with open(f"{lib_name}.csv") as f:
         current_isbn = None
         for line in f:
@@ -124,28 +119,33 @@ for lib_name in libraries:
                 continue
 
 with open("Members.csv") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if not row or not row[0].strip().isdigit():
+            continue
+        member_id = row[0]
+        first = row[1].strip().replace("'", "''")
+        last = row[2].strip().replace("'", "''")
+        gender = row[3]
+        dob = sql_date(row[4])
+        print(
+            f"insert into member values ({member_id}, '{first}', '{last}', '{gender}', '{dob}');"
+        )
+
+
+with open("Members.csv") as f:
     current_member_id = None
     for line in f:
         line = line.strip()
         if not line:
             continue
-
         parts = [p.strip() for p in line.split(",")]
 
         if parts[0].isdigit():
-            member_id = int(parts[0])
-            first = parts[1].strip().replace("'", "''")
-            last = parts[2].strip().replace("'", "''")
-            gender = parts[3]
-            dob = sql_date(parts[4])
-            print(
-                f"insert into member values ({member_id}, '{first}', '{last}', '{gender}', '{dob}');"
-            )
-            current_member_id = member_id
+            current_member_id = int(parts[0])
         else:
             if len(parts) < 2 or current_member_id is None:
                 continue
-
             isbn = parts[0]
             checkout = sql_date(parts[1])
             if len(parts) >= 3 and parts[2]:
