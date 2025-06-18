@@ -1,0 +1,1223 @@
+MariaDB [jmaster]> source create-library.sql
+Query OK, 0 rows affected (0.041 sec)
+
+Query OK, 0 rows affected (0.041 sec)
+
+Query OK, 0 rows affected (0.044 sec)
+
+Query OK, 0 rows affected (0.044 sec)
+
+Query OK, 0 rows affected (0.261 sec)
+
+Query OK, 0 rows affected (0.079 sec)
+
+Query OK, 0 rows affected (0.070 sec)
+
+Query OK, 0 rows affected (0.077 sec)
+
+Query OK, 0 rows affected (0.081 sec)
+
+Query OK, 0 rows affected (0.072 sec)
+
+Query OK, 0 rows affected (0.077 sec)
+
+Query OK, 0 rows affected (0.090 sec)
+
+Query OK, 0 rows affected (0.096 sec)
+
+Query OK, 0 rows affected (0.114 sec)
+
+Query OK, 0 rows affected (0.099 sec)
+
+MariaDB [jmaster]> source populate.sql
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.051 sec)
+
+Query OK, 1 row affected (0.010 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.038 sec)
+
+Query OK, 1 row affected (0.032 sec)
+
+Query OK, 1 row affected (0.033 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.015 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.016 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.017 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.021 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.015 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.016 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.045 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.018 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.021 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.068 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.054 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 0 rows affected, 1 warning (0.063 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 0 rows affected, 1 warning (0.053 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.060 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.065 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.072 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.063 sec)
+
+Query OK, 1 row affected (0.022 sec)
+
+Query OK, 1 row affected (0.058 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.069 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.073 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.026 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.009 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.010 sec)
+
+Query OK, 1 row affected (0.017 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.021 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.022 sec)
+
+Query OK, 1 row affected (0.017 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.010 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.011 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.006 sec)
+
+Query OK, 1 row affected (0.007 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.014 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.013 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.008 sec)
+
+MariaDB [jmaster]> source queries-triggers-views.sql
+Query OK, 0 rows affected (0.045 sec)
+
++------------+--------------------+--------------+-------+
+| lib_name   | street             | city         | state |
++------------+--------------------+--------------+-------+
+| Main       | 42 South Main      | Fort Collins | CO    |
+| South Park | 4000 South College | Fort Collins | CO    |
++------------+--------------------+--------------+-------+
+2 rows in set (0.001 sec)
+
++------------+----------------+--------------+------------------+--------------+--------------+
+| lib_name   | isbn           | total_copies | copies_available | shelf_number | floor_number |
++------------+----------------+--------------+------------------+--------------+--------------+
+| Main       | 96-42103-10001 |            3 |                3 |            1 |            1 |
+| South Park | 96-42103-10001 |            1 |                1 |            8 |            3 |
+| Main       | 96-42103-10002 |            1 |                1 |            1 |            1 |
+| South Park | 96-42103-10002 |            1 |                1 |            8 |            3 |
+| Main       | 96-42103-10003 |            1 |                1 |            1 |            1 |
+| South Park | 96-42103-10003 |            1 |                1 |            8 |            3 |
+| Main       | 96-42103-10004 |            2 |                2 |            2 |            1 |
+| South Park | 96-42103-10004 |            1 |                1 |            8 |            3 |
+| Main       | 96-42103-10005 |            1 |                1 |            2 |            1 |
+| South Park | 96-42103-10005 |            1 |                1 |            8 |            3 |
+| South Park | 96-42103-10006 |            1 |                1 |            8 |            3 |
+| Main       | 96-42103-10006 |            1 |                1 |            2 |            1 |
+| South Park | 96-42103-10007 |            3 |                3 |            7 |            3 |
+| Main       | 96-42103-10007 |            2 |                2 |            3 |            1 |
+| Main       | 96-42103-10008 |            2 |                2 |            3 |            1 |
+| South Park | 96-42103-10008 |            3 |                3 |            7 |            3 |
+| South Park | 96-42103-10009 |            1 |                1 |            7 |            3 |
+| Main       | 96-42103-10009 |            2 |                2 |            3 |            1 |
+| South Park | 96-42103-10011 |            1 |                1 |            7 |            3 |
+| Main       | 96-42103-10011 |            2 |                2 |            4 |            1 |
+| South Park | 96-42103-10022 |            2 |                2 |            7 |            3 |
+| Main       | 96-42103-10022 |            3 |                3 |            4 |            1 |
+| South Park | 96-42103-10033 |            3 |                3 |            7 |            3 |
+| Main       | 96-42103-10033 |            3 |                3 |            4 |            1 |
+| Main       | 96-42103-10034 |            1 |                1 |            5 |            2 |
+| Main       | 96-42103-10040 |            2 |                2 |            5 |            2 |
+| South Park | 96-42103-10040 |            1 |                1 |            4 |            2 |
+| South Park | 96-42103-10054 |            1 |                1 |            4 |            2 |
+| Main       | 96-42103-10054 |            2 |                2 |            5 |            2 |
+| Main       | 96-42103-10068 |            1 |                1 |            6 |            2 |
+| South Park | 96-42103-10068 |            1 |                1 |            4 |            2 |
+| South Park | 96-42103-10081 |            1 |                1 |            4 |            2 |
+| Main       | 96-42103-10081 |            1 |                1 |            6 |            2 |
+| Main       | 96-42103-10093 |            1 |                1 |            6 |            2 |
+| South Park | 96-42103-10093 |            1 |                1 |            4 |            2 |
+| South Park | 96-42103-10109 |            1 |                1 |            4 |            2 |
+| Main       | 96-42103-10109 |            1 |                1 |            6 |            2 |
+| South Park | 96-42103-10206 |            1 |                1 |            4 |            2 |
+| Main       | 96-42103-10206 |            1 |                1 |            7 |            2 |
+| South Park | 96-42103-10300 |            1 |                1 |            4 |            2 |
+| Main       | 96-42103-10300 |            2 |                2 |            7 |            2 |
+| South Park | 96-42103-10401 |            1 |                1 |            3 |            2 |
+| Main       | 96-42103-10401 |            2 |                2 |            7 |            2 |
+| Main       | 96-42103-10502 |            1 |                1 |            7 |            2 |
+| South Park | 96-42103-10502 |            1 |                1 |            3 |            2 |
+| Main       | 96-42103-10604 |            2 |                2 |            8 |            2 |
+| Main       | 96-42103-10709 |            3 |                3 |            8 |            2 |
+| Main       | 96-42103-10800 |            2 |                2 |            8 |            2 |
+| Main       | 96-42103-10907 |            7 |                7 |            8 |            2 |
+| South Park | 96-42103-10907 |            7 |                7 |            3 |            2 |
+| South Park | 96-42103-11003 |            2 |                2 |            3 |            2 |
+| Main       | 96-42103-11003 |            3 |                3 |            8 |            2 |
+| South Park | 96-42103-11604 |            2 |                2 |            3 |            2 |
+| South Park | 96-42103-11709 |            1 |                1 |            3 |            2 |
+| South Park | 96-42103-11800 |            2 |                2 |            3 |            2 |
++------------+----------------+--------------+------------------+--------------+--------------+
+55 rows in set (0.001 sec)
+
++------------------------------+--------------+------------+
+| title                        | total_copies | lib_name   |
++------------------------------+--------------+------------+
+| American Football            |            3 | Main       |
+| American Football            |            3 | South Park |
+| Challenging Puzzles          |            3 | Main       |
+| Challenging Puzzles          |            2 | South Park |
+| Cubs Win!                    |            7 | Main       |
+| Cubs Win!                    |            7 | South Park |
+| Database Theory              |            2 | Main       |
+| Database Theory              |            1 | South Park |
+| Downton Abbey                |            2 | Main       |
+| Downton Abbey                |            1 | South Park |
+| Eating Healthy               |            2 | Main       |
+| Eating Healthy               |            1 | South Park |
+| Escape from Gilligans Island |            1 | Main       |
+| Escape from Gilligans Island |            1 | South Park |
+| Fixing Computers             |            1 | Main       |
+| Fixing Computers             |            1 | South Park |
+| Gardening Tips               |            1 | Main       |
+| Gardening Tips               |            1 | South Park |
+| Hal Finds a Home             |            1 | Main       |
+| Hal Finds a Home             |            1 | South Park |
+| How to Digitally Sign        |            2 | Main       |
+| How to Digitally Sign        |            3 | South Park |
+| How to Grow Cucumbers        |            2 | Main       |
+| How to Grow Cucumbers        |            1 | South Park |
+| How to Grow Tomatoes         |            3 | Main       |
+| How to Grow Tomatoes         |            1 | South Park |
+| Lacey Discovers Herself      |            2 | Main       |
+| Lacey Discovers Herself      |            1 | South Park |
+| Last Train to Clarksville    |            1 | Main       |
+| Last Train to Clarksville    |            1 | South Park |
+| Missing Tomorrow             |            3 | Main       |
+| Missing Tomorrow             |            2 | South Park |
+| Mr. Ed                       |            1 | Main       |
+| Mr. Ed                       |            1 | South Park |
+| Mr. Smith Goes to Washington |            1 | Main       |
+| Mr. Smith Goes to Washington |            1 | South Park |
+| Red Burn                     |            1 | Main       |
+| Red Burn                     |            1 | South Park |
+| Sam Needs a Friend           |            2 | Main       |
+| Sam Needs a Friend           |            3 | South Park |
+| Studying is Your Friend      |            1 | Main       |
+| Studying is Your Friend      |            1 | South Park |
+| Taks McGrill                 |            1 | Main       |
+| Taks McGrill                 |            1 | South Park |
+| To Have and To Cherish       |            2 | Main       |
+| To Have and To Cherish       |            1 | South Park |
+| Where to Start               |            2 | Main       |
+| Where to Start               |            1 | South Park |
++------------------------------+--------------+------------+
+48 rows in set (0.002 sec)
+
++------------+------------+
+| lib_name   | num_titles |
++------------+------------+
+| Main       |         28 |
+| South Park |         27 |
++------------+------------+
+2 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.070 sec)
+
+Query OK, 0 rows affected (0.052 sec)
+
+Query OK, 0 rows affected (0.044 sec)
+
+Query OK, 0 rows affected (0.038 sec)
+
+Query OK, 0 rows affected (0.043 sec)
+
+Query OK, 0 rows affected (0.023 sec)
+
++------------------------------+--------------+-----------------------------------------------------+--------------+
+| book_title                   | library_name | authors                                             | shelf_number |
++------------------------------+--------------+-----------------------------------------------------+--------------+
+| American Football            | Main         | Julie Barnes                                        |            4 |
+| American Football            | South Park   | Julie Barnes                                        |            4 |
+| American Football            | Main         | Julie Barnes                                        |            7 |
+| American Football            | South Park   | Julie Barnes                                        |            7 |
+| Blue is Your Friend          | South Park   | John Crichton, Barbara Wright                       |            3 |
+| Challenging Puzzles          | Main         | Roger Ramjet                                        |            4 |
+| Challenging Puzzles          | South Park   | Roger Ramjet                                        |            4 |
+| Challenging Puzzles          | Main         | Roger Ramjet                                        |            7 |
+| Challenging Puzzles          | South Park   | Roger Ramjet                                        |            7 |
+| Cubs Win!                    | Main         | Red Skelton, Barbara Wright                         |            8 |
+| Cubs Win!                    | South Park   | Red Skelton, Barbara Wright                         |            8 |
+| Cubs Win!                    | Main         | Red Skelton, Barbara Wright                         |            3 |
+| Cubs Win!                    | South Park   | Red Skelton, Barbara Wright                         |            3 |
+| Database Theory              | Main         | Dickey Betts, Waco Kid                              |            4 |
+| Database Theory              | South Park   | Dickey Betts, Waco Kid                              |            4 |
+| Database Theory              | Main         | Dickey Betts, Waco Kid                              |            7 |
+| Database Theory              | South Park   | Dickey Betts, Waco Kid                              |            7 |
+| Downton Abbey                | Main         | Robert Crawley                                      |            3 |
+| Downton Abbey                | South Park   | Robert Crawley                                      |            3 |
+| Downton Abbey                | Main         | Robert Crawley                                      |            7 |
+| Downton Abbey                | South Park   | Robert Crawley                                      |            7 |
+| Eating Healthy               | Main         | Dickey Betts, Waco Kid                              |            7 |
+| Eating Healthy               | South Park   | Dickey Betts, Waco Kid                              |            7 |
+| Eating Healthy               | Main         | Dickey Betts, Waco Kid                              |            4 |
+| Eating Healthy               | South Park   | Dickey Betts, Waco Kid                              |            4 |
+| Eating in the Fort           | South Park   | Thomas Magnum                                       |            3 |
+| Escape from Gilligans Island | Main         | Bobby Ewing, Mickey Hart                            |            6 |
+| Escape from Gilligans Island | South Park   | Bobby Ewing, Mickey Hart                            |            6 |
+| Escape from Gilligans Island | Main         | Bobby Ewing, Mickey Hart                            |            4 |
+| Escape from Gilligans Island | South Park   | Bobby Ewing, Mickey Hart                            |            4 |
+| European Football            | Main         | Julie Barnes                                        |            5 |
+| Fixing Computers             | Main         | Red Skelton                                         |            6 |
+| Fixing Computers             | South Park   | Red Skelton                                         |            6 |
+| Fixing Computers             | Main         | Red Skelton                                         |            4 |
+| Fixing Computers             | South Park   | Red Skelton                                         |            4 |
+| Gardening Tips               | Main         | Julie Barnes, Thomas Magnum                         |            7 |
+| Gardening Tips               | South Park   | Julie Barnes, Thomas Magnum                         |            7 |
+| Gardening Tips               | Main         | Julie Barnes, Thomas Magnum                         |            3 |
+| Gardening Tips               | South Park   | Julie Barnes, Thomas Magnum                         |            3 |
+| Green Eggs                   | South Park   | Aeon Flux, Thomas Magnum                            |            3 |
+| Green is Your Friend         | Main         | John Crichton, Barbara Wright                       |            8 |
+| Hal Finds a Home             | Main         | Mickey Hart                                         |            2 |
+| Hal Finds a Home             | South Park   | Mickey Hart                                         |            2 |
+| Hal Finds a Home             | Main         | Mickey Hart                                         |            8 |
+| Hal Finds a Home             | South Park   | Mickey Hart                                         |            8 |
+| How to Digitally Sign        | Main         | John Crichton, Red Skelton                          |            3 |
+| How to Digitally Sign        | South Park   | John Crichton, Red Skelton                          |            3 |
+| How to Digitally Sign        | Main         | John Crichton, Red Skelton                          |            7 |
+| How to Digitally Sign        | South Park   | John Crichton, Red Skelton                          |            7 |
+| How to Grow Cucumbers        | Main         | Bobby Ewing, Roger Ramjet                           |            7 |
+| How to Grow Cucumbers        | South Park   | Bobby Ewing, Roger Ramjet                           |            7 |
+| How to Grow Cucumbers        | Main         | Bobby Ewing, Roger Ramjet                           |            3 |
+| How to Grow Cucumbers        | South Park   | Bobby Ewing, Roger Ramjet                           |            3 |
+| How to Grow Tomatoes         | Main         | Bobby Ewing, Waco Kid                               |            1 |
+| How to Grow Tomatoes         | South Park   | Bobby Ewing, Waco Kid                               |            1 |
+| How to Grow Tomatoes         | Main         | Bobby Ewing, Waco Kid                               |            8 |
+| How to Grow Tomatoes         | South Park   | Bobby Ewing, Waco Kid                               |            8 |
+| Lacey Discovers Herself      | Main         | Julie Barnes, Thomas Magnum                         |            5 |
+| Lacey Discovers Herself      | South Park   | Julie Barnes, Thomas Magnum                         |            5 |
+| Lacey Discovers Herself      | Main         | Julie Barnes, Thomas Magnum                         |            4 |
+| Lacey Discovers Herself      | South Park   | Julie Barnes, Thomas Magnum                         |            4 |
+| Last Train to Clarksville    | Main         | Bobby Ewing                                         |            2 |
+| Last Train to Clarksville    | South Park   | Bobby Ewing                                         |            2 |
+| Last Train to Clarksville    | Main         | Bobby Ewing                                         |            8 |
+| Last Train to Clarksville    | South Park   | Bobby Ewing                                         |            8 |
+| Missing Tomorrow             | Main         | Dickey Betts, Mickey Hart, Perry Mason, Grace Slick |            8 |
+| Missing Tomorrow             | South Park   | Dickey Betts, Mickey Hart, Perry Mason, Grace Slick |            8 |
+| Missing Tomorrow             | Main         | Dickey Betts, Mickey Hart, Perry Mason, Grace Slick |            3 |
+| Missing Tomorrow             | South Park   | Dickey Betts, Mickey Hart, Perry Mason, Grace Slick |            3 |
+| Mr. Ed                       | Main         | Scottie Ferguson                                    |            6 |
+| Mr. Ed                       | South Park   | Scottie Ferguson                                    |            6 |
+| Mr. Ed                       | Main         | Scottie Ferguson                                    |            4 |
+| Mr. Ed                       | South Park   | Scottie Ferguson                                    |            4 |
+| Mr. Smith Goes to Washington | Main         | Red Skelton                                         |            1 |
+| Mr. Smith Goes to Washington | South Park   | Red Skelton                                         |            1 |
+| Mr. Smith Goes to Washington | Main         | Red Skelton                                         |            8 |
+| Mr. Smith Goes to Washington | South Park   | Red Skelton                                         |            8 |
+| Red Burn                     | Main         | Robert Crawley, Waco Kid                            |            6 |
+| Red Burn                     | South Park   | Robert Crawley, Waco Kid                            |            6 |
+| Red Burn                     | Main         | Robert Crawley, Waco Kid                            |            4 |
+| Red Burn                     | South Park   | Robert Crawley, Waco Kid                            |            4 |
+| Sam Needs a Friend           | Main         | Scottie Ferguson, Roger Thornhill, Barbara Wright   |            3 |
+| Sam Needs a Friend           | South Park   | Scottie Ferguson, Roger Thornhill, Barbara Wright   |            3 |
+| Sam Needs a Friend           | Main         | Scottie Ferguson, Roger Thornhill, Barbara Wright   |            7 |
+| Sam Needs a Friend           | South Park   | Scottie Ferguson, Roger Thornhill, Barbara Wright   |            7 |
+| Studying is Your Friend      | Main         | Thomas Magnum, Roger Ramjet                         |            1 |
+| Studying is Your Friend      | South Park   | Thomas Magnum, Roger Ramjet                         |            1 |
+| Studying is Your Friend      | Main         | Thomas Magnum, Roger Ramjet                         |            8 |
+| Studying is Your Friend      | South Park   | Thomas Magnum, Roger Ramjet                         |            8 |
+| Taks McGrill                 | Main         | Scottie Ferguson, Barbara Wright                    |            7 |
+| Taks McGrill                 | South Park   | Scottie Ferguson, Barbara Wright                    |            7 |
+| Taks McGrill                 | Main         | Scottie Ferguson, Barbara Wright                    |            4 |
+| Taks McGrill                 | South Park   | Scottie Ferguson, Barbara Wright                    |            4 |
+| To Have and To Cherish       | Main         | Robert Crawley, John Crichton, Roger Thornhill      |            2 |
+| To Have and To Cherish       | South Park   | Robert Crawley, John Crichton, Roger Thornhill      |            2 |
+| To Have and To Cherish       | Main         | Robert Crawley, John Crichton, Roger Thornhill      |            8 |
+| To Have and To Cherish       | South Park   | Robert Crawley, John Crichton, Roger Thornhill      |            8 |
+| Too Many Cooks               | Main         | Aeon Flux, Thomas Magnum                            |            8 |
+| Using the Library            | Main         | Thomas Magnum                                       |            8 |
+| Where to Start               | Main         | Roger Ramjet, Grace Slick                           |            5 |
+| Where to Start               | South Park   | Roger Ramjet, Grace Slick                           |            5 |
+| Where to Start               | Main         | Roger Ramjet, Grace Slick                           |            4 |
+| Where to Start               | South Park   | Roger Ramjet, Grace Slick                           |            4 |
++------------------------------+--------------+-----------------------------------------------------+--------------+
+103 rows in set (0.007 sec)
+
+MariaDB [jmaster]> source activity.sql
+Query OK, 1 row affected (0.014 sec)
+
+ERROR 1364 (HY000): Field 'total_copies' doesn't have a default value
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`jmaster`.`book_author`, CONSTRAINT `book_author_ibfk_2` FOREIGN KEY (`author_id`) REFERENCES `author` (`author_id`))
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+
+ERROR 1062 (23000): Duplicate entry '96-42013-10510' for key 'PRIMARY'
+ERROR 1364 (HY000): Field 'total_copies' doesn't have a default value
+Query OK, 1 row affected (0.012 sec)
+
+Query OK, 1 row affected (0.012 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`jmaster`.`book`, CONSTRAINT `book_ibfk_1` FOREIGN KEY (`pub_id`) REFERENCES `publisher` (`pub_id`))
+ERROR 1364 (HY000): Field 'total_copies' doesn't have a default value
++----+-----------------------------------------------------------------------+-------------+-------------+
+| id | action                                                                | action_date | action_time |
++----+-----------------------------------------------------------------------+-------------+-------------+
+|  1 | updated total copies of book 96-42103-10907 at Main from 7 to 8       | 2025-06-17  | 23:56:27    |
+|  2 | added author id 305                                                   | 2025-06-17  | 23:56:27    |
+|  3 | removed book 96-42103-11003 from library Main                         | 2025-06-17  | 23:56:27    |
+|  4 | updated total copies of book 96-42103-11604 at South Park from 2 to 4 | 2025-06-17  | 23:56:27    |
++----+-----------------------------------------------------------------------+-------------+-------------+
+4 rows in set (0.001 sec)
+
+MariaDB [jmaster]> notee
