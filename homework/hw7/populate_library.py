@@ -17,7 +17,7 @@ with open("Library.csv") as f:
         city = row[2]
         state = row[3]
         print(
-            f"insert into library values ('{lib_name}', '{street}', '{city}', '{state}')"
+            f"insert into library values ('{lib_name}', '{street}', '{city}', '{state}');"
         )
 
 with open("Author.csv") as f:
