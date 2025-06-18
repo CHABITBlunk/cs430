@@ -107,6 +107,7 @@ for lib_name in libraries:
                 if len(parts) < 7:
                     continue
                 current_isbn = parts[0]
+            else:
                 author_ids = line.strip().split(",")
                 for author_id in author_ids:
                     author_id = author_id.strip()
@@ -115,8 +116,6 @@ for lib_name in libraries:
                             f"insert into book_author (isbn, author_id) "
                             f"values ('{current_isbn}', {author_id});"
                         )
-            else:
-                continue
 
 with open("Members.csv") as f:
     reader = csv.reader(f)
