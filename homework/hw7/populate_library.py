@@ -92,12 +92,12 @@ for lib_name in libraries:
                 pub_date = sql_date(parts[6])
 
                 print(
-                    f"insert into book (isbn, title, pub_id, year_published) "
-                    f"values ('{isbn}', '{title}', {pub_id}, '{pub_date}');"
+                    f"insert ignore into book (isbn, title, pub_id, year_published) "
+                    f"values ('{isbn}', '{title}', {pub_id}, '{pub_date}')"
                 )
                 print(
                     f"insert into located_at (lib_name, isbn, total_copies, copies_available, shelf_number, floor_number)"
-                    f"values('{lib_name}', '{isbn}', '{num_copies}', '{num_copies}', '{shelf_no}', '{floor_no}')"
+                    f"values('{lib_name}', '{isbn}', '{num_copies}', '{num_copies}', '{shelf_no}', '{floor_no}');"
                 )
 
                 current_isbn = isbn
