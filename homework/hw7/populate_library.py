@@ -113,7 +113,7 @@ for lib_name in libraries:
                     author_id = author_id.strip()
                     if author_id:
                         print(
-                            f"insert igonre into book_author (isbn, author_id) "
+                            f"insert ignore into book_author (isbn, author_id) "
                             f"values ('{current_isbn}', {author_id});"
                         )
 
