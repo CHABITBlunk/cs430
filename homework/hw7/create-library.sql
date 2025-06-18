@@ -1,5 +1,3 @@
-set FOREIGN_KEY_CHECKS = 0;
-
 drop view if exists borrowed_by;
 drop table if exists located_at;
 drop table if exists borrowed;
@@ -11,7 +9,7 @@ create table library (
   lib_name varchar(20)  not null,
   street varchar(30)    not null,
   city varchar(30)      not null,
-  state varchar(15)     not null,
+  state varchar(2)      not null,
   primary key(lib_name)
 );
 
@@ -25,8 +23,8 @@ create table member (
   member_id   int         not null,
   first_name  varchar(10) not null,
   last_name   varchar(10) not null,
-  dob         date        not null,
   gender      char        not null,
+  dob         date        not null,
   primary key(member_id)
 );
 
@@ -79,12 +77,12 @@ create table borrowed (
 );
 
 create table located_at (
-  lib_name varchar(20) not null,
-  isbn            varchar(15) not null,
-  total_copies int not null,
-  copies_available int not null,
-  shelf int not null,
-  floor int not null,
+  lib_name varchar(20)  not null,
+  isbn varchar(15)      not null,
+  total_copies     int  not null,
+  copies_available int  not null check (copies_available >= 0),
+  shelf_number int      not null,
+  floor_number int      not null,
   primary key(lib_name, isbn),
   foreign key(lib_name) references library(lib_name),
   foreign key(isbn) references book(isbn),
