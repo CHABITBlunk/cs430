@@ -150,11 +150,11 @@ with open("Members.csv") as f:
             if len(parts) >= 3 and parts[2]:
                 checkin = sql_date(parts[2])
                 print(
-                    f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
-                    f"values ({current_member_id}, '{isbn}', '{checkout}', '{checkin}');"
+                    f"insert into borrowed (lib_name, member_id, isbn, checkout_date, checkin_date) "
+                    f"values ('Main', {current_member_id}, '{isbn}', '{checkout}', '{checkin}');"
                 )
             else:
                 print(
-                    f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
-                    f"values ({current_member_id}, '{isbn}', '{checkout}', null);"
+                    f"insert into borrowed (lib_name, member_id, isbn, checkout_date, checkin_date) "
+                    f"values ('Main', {current_member_id}, '{isbn}', '{checkout}', null);"
                 )
