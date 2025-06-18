@@ -38,13 +38,15 @@ create table book (
 
 create table phone (
   p_number    varchar(12) not null,
-  phone_type  varchar(10)
+  phone_type  varchar(10),
+  primary key (p_number)
 );
 
 create table phone_owner (
   p_number varchar(12) not null,
   owner_type varchar(10) not null,
   owner_id int not null,
+  primary key (p_number),
   foreign key (p_number) references phone(p_number)
 );
 
