@@ -85,5 +85,5 @@ create table located_at (
   floor_number int      not null,
   primary key(lib_name, isbn),
   foreign key(lib_name) references library(lib_name),
-  foreign key(isbn) references book(isbn),
+  foreign key(isbn) references book(isbn)
 );
