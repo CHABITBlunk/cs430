@@ -1,3 +1,5 @@
+drop table if exists audit_log;
+
 select * from library order by lib_name;
 
 select * from located_at order by isbn;
