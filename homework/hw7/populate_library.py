@@ -72,7 +72,6 @@ with open("Publisher.csv") as f:
 
 for lib_name in libraries:
     with open(f"{lib_name}.csv") as f:
-        current_isbn = None
         for line in f:
             line = line.rstrip("\n")
             if not line.strip():
@@ -93,22 +92,36 @@ for lib_name in libraries:
 
                 print(
                     f"insert ignore into book (isbn, title, pub_id, year_published) "
-                    f"values ('{isbn}', '{title}', {pub_id}, '{pub_date}')"
+                    f"values ('{isbn}', '{title}', {pub_id}, '{pub_date}');"
                 )
                 print(
-                    f"insert into located_at (lib_name, isbn, total_copies, copies_available, shelf_number, floor_number)"
+                    f"insert into located_at (lib_name, isbn, total_copies, copies_available, shelf_number, floor_number) "
                     f"values('{lib_name}', '{isbn}', '{num_copies}', '{num_copies}', '{shelf_no}', '{floor_no}');"
                 )
-
-                current_isbn = isbn
             else:
+                continue
+
+    with open(f"{lib_name}.csv") as f:
+        current_isbn = None
+        for line in f:
+            line = line.rstrip("\n")
+            if not line.strip():
+                continue
+            if not line.startswith("  "):
+                parts = line.split(",")
+                if len(parts) < 7:
+                    continue
+                current_isbn = parts[0]
                 author_ids = line.strip().split(",")
                 for author_id in author_ids:
                     author_id = author_id.strip()
                     if author_id:
                         print(
-                            f"insert into book_author (isbn, author_id) values ('{current_isbn}', {author_id});"
+                            f"insert into book_author (isbn, author_id) "
+                            f"values ('{current_isbn}', {author_id});"
                         )
+            else:
+                continue
 
 with open("Members.csv") as f:
     current_member_id = None
