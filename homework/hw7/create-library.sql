@@ -1,4 +1,3 @@
-drop view if exists borrowed_by;
 drop table if exists located_at;
 drop table if exists borrowed;
 drop table if exists book_author;
@@ -40,14 +39,12 @@ create table book (
 create table phone (
   p_number    varchar(12) not null,
   phone_type  varchar(10),
-  primary key(p_number)
 );
 
 create table phone_owner (
   p_number varchar(12) not null,
   owner_type varchar(10) not null,
   owner_id int not null,
-  primary key (p_number, owner_type, owner_id),
   foreign key (p_number) references phone(p_number)
 );
 
@@ -67,13 +64,15 @@ create table book_author (
 );
 
 create table borrowed (
-  member_id       int           not null,
-  isbn            varchar(20)   not null,
-  checkout_date   date          not null default current_date,
+  member_id       int         not null,
+  isbn            varchar(20) not null,
+  lib_name        varchar(20) not null,
+  checkout_date   date        not null default current_date,
   checkin_date    date,
   primary key(member_id, isbn, checkout_date),
   foreign key(member_id) references member(member_id),
   foreign key(isbn) references book(isbn)
+  foreign key(lib_name) references library(lib_name)
 );
 
 create table located_at (

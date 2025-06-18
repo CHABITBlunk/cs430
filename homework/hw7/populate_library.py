@@ -39,9 +39,9 @@ with open("Author.csv") as f:
                 type_code, "unknown"
             )
 
-            print(f"insert ignore into phone values ('{p_number}', '{phone_type}');")
+            print(f"insert into phone values ('{p_number}', '{phone_type}');")
             print(
-                f"insert ignore into phone_owner values ('{p_number}', 'author', {author_id});"
+                f"insert into phone_owner values ('{p_number}', 'author', {author_id});"
             )
 
 with open("Publisher.csv") as f:
@@ -62,9 +62,9 @@ with open("Publisher.csv") as f:
                 type_code, "unknown"
             )
 
-            print(f"insert ignore into phone values ('{p_number}', '{phone_type}');")
+            print(f"insert into phone values ('{p_number}', '{phone_type}');")
             print(
-                f"insert ignore into phone_owner values ('{p_number}', 'publisher', {pub_id});"
+                f"insert into phone_owner values ('{p_number}', 'publisher', {pub_id});"
             )
 
 
