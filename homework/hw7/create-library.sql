@@ -38,7 +38,7 @@ create table book (
 
 create table phone (
   p_number    varchar(12) not null,
-  phone_type  varchar(10),
+  phone_type  varchar(10)
 );
 
 create table phone_owner (
@@ -71,7 +71,7 @@ create table borrowed (
   checkin_date    date,
   primary key(member_id, isbn, checkout_date),
   foreign key(member_id) references member(member_id),
-  foreign key(isbn) references book(isbn)
+  foreign key(isbn) references book(isbn),
   foreign key(lib_name) references library(lib_name)
 );
 
