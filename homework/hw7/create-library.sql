@@ -3,7 +3,7 @@ drop table if exists located_at;
 drop table if exists borrowed;
 drop table if exists book_author;
 drop table if exists phone_owner;
-drop table if exists member, book, author, phone, publisher;
+drop table if exists library, member, book, author, phone, publisher;
 
 create table library (
   lib_name varchar(20)  not null,
