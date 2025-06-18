@@ -31,7 +31,6 @@ with open("Author.csv") as f:
         print(f"insert into author values ({author_id}, '{first}', '{last}');")
 
         for i in range(0, len(phones), 2):
-
             if i + 1 >= len(phones) or phones[i] == "None":
                 continue
 
@@ -56,7 +55,6 @@ with open("Publisher.csv") as f:
         print(f"insert into publisher values ({pub_id}, '{pub_name}');")
 
         for i in range(0, len(phones), 2):
-
             if i + 1 >= len(phones) or phones[i] == "None":
                 continue
 
@@ -77,7 +75,6 @@ for lib_name in libraries:
         current_isbn = None
         for line in f:
             line = line.rstrip("\n")
-
             if not line.strip():
                 continue
 
@@ -117,7 +114,6 @@ with open("Members.csv") as f:
     current_member_id = None
     for line in f:
         line = line.strip()
-
         if not line:
             continue
 
@@ -134,20 +130,19 @@ with open("Members.csv") as f:
             )
             current_member_id = member_id
         else:
-
             if len(parts) < 2 or current_member_id is None:
                 continue
 
-        isbn = parts[0]
-        checkout = sql_date(parts[1])
-        if len(parts) >= 3 and parts[2]:
-            checkin = sql_date(parts[2])
-            print(
-                f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
-                f"values ({current_member_id}, '{isbn}', '{checkout}', '{checkin}');"
-            )
-        else:
-            print(
-                f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
-                f"values ({current_member_id}, '{isbn}', '{checkout}', null);"
-            )
+            isbn = parts[0]
+            checkout = sql_date(parts[1])
+            if len(parts) >= 3 and parts[2]:
+                checkin = sql_date(parts[2])
+                print(
+                    f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
+                    f"values ({current_member_id}, '{isbn}', '{checkout}', '{checkin}');"
+                )
+            else:
+                print(
+                    f"insert into borrowed (member_id, isbn, checkout_date, checkin_date) "
+                    f"values ({current_member_id}, '{isbn}', '{checkout}', null);"
+                )
