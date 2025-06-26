@@ -54,7 +54,7 @@ public class Lab9 {
           if (!cidate.equals("N/A")) {
             SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
             SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date d = in.parse(codate);
+            java.util.Date d = in.parse(cidate);
             codate = out.format(d);
             query += String.format("update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s';",
                 cidate,
