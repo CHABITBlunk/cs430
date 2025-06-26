@@ -1,6 +1,6 @@
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import javax.xml.parsers.*;
 
@@ -25,10 +25,15 @@ public class Lab9 {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
           Element sectionNode = (Element) node;
 
+          SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
           NodeList cidateElementList = sectionNode.getElementsByTagName("Checkin_date");
           Element cidateElement = (Element) cidateElementList.item(0);
           NodeList cidateNodeList = cidateElement.getChildNodes();
           String cidate = ((Node) cidateNodeList.item(0)).getNodeValue().trim();
+          java.util.Date d = sdf.parse(cidate);
+          sdf.applyPattern("yyyy-MM-dd");
+          cidate = sdf.format(d);
 
           NodeList idElementList = sectionNode.getElementsByTagName("MemberID");
           Element idElement = (Element) idElementList.item(0);
@@ -49,6 +54,9 @@ public class Lab9 {
           Element codateElement = (Element) codateElementList.item(0);
           NodeList codateNodeList = codateElement.getChildNodes();
           String codate = ((Node) codateNodeList.item(0)).getNodeValue().trim();
+          d = sdf.parse(codate);
+          sdf.applyPattern("yyyy-MM-dd");
+          codate = sdf.format(d);
 
           String query = "";
           if (!cidate.equals("N/A")) {
