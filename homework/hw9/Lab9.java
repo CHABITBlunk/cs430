@@ -62,8 +62,6 @@ public class Lab9 {
           } else {
             SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
             SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date cid = in.parse(cidate);
-            cidate = out.format(cid);
             java.util.Date cod = in.parse(codate);
             codate = out.format(cod);
             query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
