@@ -52,12 +52,11 @@ public class Lab9 {
 
           String query = "";
           if (!cidate.equals("N/A")) {
-            query += String.format("update borrowed set checkin_date = %s where member_id = %s and isbn = %s", cidate,
+            query += String.format("update borrowed set checkin_date = %s where member_id = %s and isbn = %s;", cidate,
                 id, isbn);
           } else {
-            query += String.format("insert into borrowed values(%s, %s, %s, %s)", id, isbn, library, codate);
+            query += String.format("insert into borrowed values(%s, %s, %s, %s);", id, isbn, library, codate);
           }
-          System.out.println(query);
           output.add(query);
         }
       }
@@ -86,27 +85,18 @@ public class Lab9 {
       String password = scanner.nextLine();
       scanner.close();
       String username = "jmaster";
-
-      readXML("./libdata.xml");
-
       String url = "jdbc:mariadb://helmi:3306/" + username;
-
       con = DriverManager.getConnection(url, username, password);
-
-      System.out.println("URL: " + url);
-      System.out.println("Connection: " + con);
-
       stmt = con.createStatement();
 
+      ArrayList<String> queries = readXML("./libdata.xml");
       try {
-        rs = stmt.executeQuery("SELECT * FROM author");
-        while (rs.next()) {
-          System.out.println(rs.getString("author_id"));
+        for (String query : queries) {
+          rs = stmt.executeQuery(query);
+          System.out.println(rs.getStatement());
         }
       } catch (Exception e) {
         System.out.print(e);
-        System.out.println(
-            "No Author table to query");
       }
 
       con.close();
