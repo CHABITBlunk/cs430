@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.xml.parsers.*;
@@ -9,7 +10,8 @@ import java.io.File;
 
 public class Lab9 {
 
-  public static void readXML(String filename) {
+  public static ArrayList<String> readXML(String filename) {
+    ArrayList<String> output = new ArrayList<>();
     try {
       File file = new File(filename);
       DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -18,36 +20,56 @@ public class Lab9 {
       doc.getDocumentElement().normalize();
       NodeList nodeList = doc.getElementsByTagName("Borrowed_by");
       for (int i = 0; i < nodeList.getLength(); i++) {
-        Node firstNode = nodeList.item(i);
+        Node node = nodeList.item(i);
 
-        if (firstNode.getNodeType() == Node.ELEMENT_NODE) {
-          Element sectionNode = (Element) firstNode;
-          NodeList memberIDElementList = sectionNode.getElementsByTagName("MemberID");
-          Element memberID = (Element) memberIDElementList.item(0);
-          NodeList memberIDNodeList = memberID.getChildNodes();
-          System.out.println("member_id: " + ((Node) memberIDNodeList.item(0)).getNodeValue().trim());
-
-          NodeList isbnElementList = sectionNode.getElementsByTagName("ISBN");
-          Element isbn = (Element) isbnElementList.item(0);
-          NodeList isbnNodeList = isbn.getChildNodes();
-          System.out.println("isbn: " + ((Node) isbnNodeList.item(0)).getNodeValue().trim());
-
-          NodeList libraryElementList = sectionNode.getElementsByTagName("Library");
-          Element library = (Element) libraryElementList.item(0);
-          NodeList libraryNodeList = library.getChildNodes();
-          System.out.println("library: " + ((Node) libraryNodeList.item(0)).getNodeValue().trim());
-
-          NodeList codateElementList = sectionNode.getElementsByTagName("Checkout_date");
-          Element codate = (Element) codateElementList.item(0);
-          NodeList codateNodeList = codate.getChildNodes();
-          System.out.println("codate: " + ((Node) codateNodeList.item(0)).getNodeValue().trim());
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+          Element sectionNode = (Element) node;
 
           NodeList cidateElementList = sectionNode.getElementsByTagName("Checkin_date");
-          Element cidate = (Element) cidateElementList.item(0);
-          NodeList cidateNodeList = cidate.getChildNodes();
-          System.out.println("cidate: " + ((Node) cidateNodeList.item(0)).getNodeValue().trim());
+          Element cidateElement = (Element) cidateElementList.item(0);
+          NodeList cidateNodeList = cidateElement.getChildNodes();
+          String cidate = ((Node) cidateNodeList.item(0)).getNodeValue().trim();
+
+          NodeList idElementList = sectionNode.getElementsByTagName("MemberID");
+          Element idElement = (Element) idElementList.item(0);
+          NodeList idNodeList = idElement.getChildNodes();
+          String id = ((Node) idNodeList.item(0)).getNodeValue().trim();
+
+          NodeList isbnElementList = sectionNode.getElementsByTagName("ISBN");
+          Element isbnElement = (Element) isbnElementList.item(0);
+          NodeList isbnNodeList = isbnElement.getChildNodes();
+          String isbn = ((Node) isbnNodeList.item(0)).getNodeValue().trim();
+
+          NodeList libraryElementList = sectionNode.getElementsByTagName("Library");
+          Element libraryElement = (Element) libraryElementList.item(0);
+          NodeList libraryNodeList = libraryElement.getChildNodes();
+          String library = ((Node) libraryNodeList.item(0)).getNodeValue().trim();
+
+          NodeList codateElementList = sectionNode.getElementsByTagName("Checkout_date");
+          Element codateElement = (Element) codateElementList.item(0);
+          NodeList codateNodeList = codateElement.getChildNodes();
+          String codate = ((Node) codateNodeList.item(0)).getNodeValue().trim();
+
+          String query = "";
+          if (!cidate.equals("N/A")) {
+            query += String.format("update borrowed set checkin_date = %s where member_id = %s and isbn = %s", cidate,
+                id, isbn);
+          } else {
+            query += String.format("insert into borrowed values(%s, %s, %s, %s)", id, isbn, library, codate);
+          }
+          System.out.println(query);
+          output.add(query);
         }
       }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return output;
+  }
+
+  public static void insertOrUpdate(Statement statement, String[] values) {
+    try {
+      statement.executeQuery("");
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -62,7 +84,6 @@ public class Lab9 {
       ResultSet rs;
       Scanner scanner = new Scanner(new File(".env"));
       String password = scanner.nextLine();
-      System.out.println(password);
       scanner.close();
       String username = "jmaster";
 
