@@ -52,10 +52,11 @@ public class Lab9 {
 
           String query = "";
           if (!cidate.equals("N/A")) {
-            query += String.format("update borrowed set checkin_date = %s where member_id = %s and isbn = %s;", cidate,
+            query += String.format("update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s';",
+                cidate,
                 id, isbn);
           } else {
-            query += String.format("insert into borrowed values(%s, %s, %s, %s);", id, isbn, library, codate);
+            query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
           }
           output.add(query);
         }
