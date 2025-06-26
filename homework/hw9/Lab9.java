@@ -3,7 +3,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import javax.xml.parsers.*;
-
 import org.w3c.dom.*;
 
 import java.io.File;
@@ -51,17 +50,17 @@ public class Lab9 {
           String codate = ((Node) codateNodeList.item(0)).getNodeValue().trim();
 
           String query = "";
+          SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
+          SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
           if (!cidate.equals("N/A")) {
-            SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
-            SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
+            // TODO: ensure books being checked in have corresponding checkout entry
             java.util.Date d = in.parse(cidate);
             cidate = out.format(d);
-            query += String.format("update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s';",
-                cidate,
-                id, isbn);
+            query += String.format(
+                "update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s' and library = '%s';",
+                cidate, id, isbn, library);
           } else {
-            SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
-            SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
+            // TODO: ensure book being checked out exists in library
             java.util.Date cod = in.parse(codate);
             codate = out.format(cod);
             query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
@@ -74,14 +73,6 @@ public class Lab9 {
       e.printStackTrace();
     }
     return output;
-  }
-
-  public static void insertOrUpdate(Statement statement, String[] values) {
-    try {
-      statement.executeQuery("");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
   }
 
   public static void main(String args[]) {
@@ -106,8 +97,12 @@ public class Lab9 {
           System.out.println(rs.getStatement());
         }
       } catch (Exception e) {
-        System.out.print(e);
+        e.printStackTrace();
       }
+
+      stmt.executeQuery("select * from borrowed;");
+      // TODO: for each member that has a book checked out (last, first, id), print
+      // TODO: all book titles checked out and from which library
 
       con.close();
     } catch (Exception e) {
