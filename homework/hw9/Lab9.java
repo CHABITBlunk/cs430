@@ -111,9 +111,7 @@ public class Lab9 {
   }
 
   public static void main(String args[]) {
-
     Connection con = null;
-
     try {
       Statement stmt;
       Scanner scanner = new Scanner(new File(".env"));
@@ -123,15 +121,7 @@ public class Lab9 {
       String url = "jdbc:mariadb://helmi:3306/" + username;
       con = DriverManager.getConnection(url, username, password);
       stmt = con.createStatement();
-
       readXML("./libdata.xml", stmt);
-
-      printResultSet(stmt.executeQuery("select * from borrowed;"));
-      System.out.println();
-      System.out.println();
-      printResultSet(stmt.executeQuery(
-          "select m.last_name, m.first_name, m.member_id, b.title, br.lib_name from borrowed br join book b on br.isbn = b.isbn join member m on br.member_id = m.member_id where br.checkin_date is null order by m.last_name, m.first_name;"));
-
       con.close();
     } catch (Exception e) {
       e.printStackTrace();
