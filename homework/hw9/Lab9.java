@@ -56,7 +56,7 @@ public class Lab9 {
             java.util.Date d = in.parse(cidate);
             cidate = out.format(d);
             query += String.format(
-                "update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s' and library = '%s';",
+                "update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s' and lib_name = '%s';",
                 cidate, id, isbn, library);
           } else {
             java.util.Date cod = in.parse(codate);
