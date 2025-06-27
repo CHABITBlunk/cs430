@@ -53,14 +53,12 @@ public class Lab9 {
           SimpleDateFormat in = new SimpleDateFormat("MM/dd/yyyy");
           SimpleDateFormat out = new SimpleDateFormat("yyyy-MM-dd");
           if (!cidate.equals("N/A")) {
-            // TODO: ensure books being checked in have corresponding checkout entry
             java.util.Date d = in.parse(cidate);
             cidate = out.format(d);
             query += String.format(
                 "update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s' and library = '%s';",
                 cidate, id, isbn, library);
           } else {
-            // TODO: ensure book being checked out exists in library
             java.util.Date cod = in.parse(codate);
             codate = out.format(cod);
             query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
@@ -101,8 +99,8 @@ public class Lab9 {
       }
 
       stmt.executeQuery("select * from borrowed;");
-      // TODO: for each member that has a book checked out (last, first, id), print
-      // TODO: all book titles checked out and from which library
+      stmt.executeQuery(
+          "select m.last_name, m.first_name, m.member_id, b.title, br.lib_name from borrowed br join book b on br.isbn = b.isbn join member m on br.member_id = m.member_id where br.checkin_date is null order by m.last_name, m.first_name;");
 
       con.close();
     } catch (Exception e) {
