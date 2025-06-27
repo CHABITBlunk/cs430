@@ -95,6 +95,21 @@ public class Lab9 {
     }
   }
 
+  public static void printResultSet(ResultSet rs) throws SQLException {
+    ResultSetMetaData meta = rs.getMetaData();
+    int columnCount = meta.getColumnCount();
+    for (int i = 1; i <= columnCount; i++) {
+      System.out.print(meta.getColumnName(i) + "\t");
+    }
+    System.out.println();
+    while (rs.next()) {
+      for (int i = 1; i < columnCount; i++) {
+        System.out.println(rs.getString(i) + "\t");
+      }
+      System.out.println();
+    }
+  }
+
   public static void main(String args[]) {
 
     Connection con = null;
@@ -111,9 +126,9 @@ public class Lab9 {
 
       readXML("./libdata.xml", stmt);
 
-      stmt.executeQuery("select * from borrowed;");
-      stmt.executeQuery(
-          "select m.last_name, m.first_name, m.member_id, b.title, br.lib_name from borrowed br join book b on br.isbn = b.isbn join member m on br.member_id = m.member_id where br.checkin_date is null order by m.last_name, m.first_name;");
+      printResultSet(stmt.executeQuery("select * from borrowed;"));
+      printResultSet(stmt.executeQuery(
+          "select m.last_name, m.first_name, m.member_id, b.title, br.lib_name from borrowed br join book b on br.isbn = b.isbn join member m on br.member_id = m.member_id where br.checkin_date is null order by m.last_name, m.first_name;"));
 
       con.close();
     } catch (Exception e) {
