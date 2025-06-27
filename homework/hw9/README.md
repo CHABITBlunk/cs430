@@ -2,7 +2,8 @@
 
 #### author: habit blunk
 
-first ensure that the library exists and is populated. refer to my scripts for hw7.
+ensure that the library exists and is populated. refer to my scripts for hw7.
+ensure that mariadb-java-client-3.5.3.jar is on `$CLASSPATH`.
 usage:
 
 ```bash
