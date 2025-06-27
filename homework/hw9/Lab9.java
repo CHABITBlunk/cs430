@@ -104,7 +104,7 @@ public class Lab9 {
     System.out.println();
     while (rs.next()) {
       for (int i = 1; i < columnCount; i++) {
-        System.out.println(rs.getString(i) + "\t");
+        System.out.print(rs.getString(i) + "\t");
       }
       System.out.println();
     }
