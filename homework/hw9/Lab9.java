@@ -9,8 +9,7 @@ import java.io.File;
 
 public class Lab9 {
 
-  public static ArrayList<String> readXML(String filename) {
-    ArrayList<String> output = new ArrayList<>();
+  public static void readXML(String filename, Statement stmt) {
     try {
       File file = new File(filename);
       DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -55,24 +54,45 @@ public class Lab9 {
           if (!cidate.equals("N/A")) {
             java.util.Date d = in.parse(cidate);
             cidate = out.format(d);
+            String checkQuery = String.format(
+                "select count(*) from borrowed where isbn = '%s' and lib_name = '%s' and member_id = %s;",
+                isbn, library, id);
+            ResultSet rs = stmt.executeQuery(checkQuery);
+            rs.next();
+            int count = rs.getInt(1);
+            rs.close();
+            if (count == 0) {
+              System.out.printf("skipping: member %s did not check %s out from  %s\n", id, isbn, library);
+              continue;
+            }
             query += String.format(
                 "update borrowed set checkin_date = '%s' where member_id = '%s' and isbn = '%s' and lib_name = '%s';",
                 cidate, id, isbn, library);
           } else {
             java.util.Date cod = in.parse(codate);
             codate = out.format(cod);
+
+            String checkQuery = String.format("select count(*) from located_at where isbn = '%s' and lib_name = '%s';",
+                isbn, library);
+            ResultSet rs = stmt.executeQuery(checkQuery);
+            rs.next();
+            int count = rs.getInt(1);
+            rs.close();
+            if (count == 0) {
+              System.out.printf("skipping: isbn %s not found in %s\n", isbn, library);
+              continue;
+            }
             query += String.format(
                 "insert into borrowed(member_id, isbn, lib_name, checkout_date) values('%s', '%s', '%s', '%s');",
                 id, isbn, library, codate);
           }
           System.out.println(query);
-          output.add(query);
+          stmt.executeQuery(query);
         }
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
-    return output;
   }
 
   public static void main(String args[]) {
@@ -89,14 +109,7 @@ public class Lab9 {
       con = DriverManager.getConnection(url, username, password);
       stmt = con.createStatement();
 
-      ArrayList<String> queries = readXML("./libdata.xml");
-      try {
-        for (String query : queries) {
-          stmt.executeQuery(query);
-        }
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
+      readXML("./libdata.xml", stmt);
 
       stmt.executeQuery("select * from borrowed;");
       stmt.executeQuery(
