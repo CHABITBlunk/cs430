@@ -79,7 +79,6 @@ public class Lab9 {
 
     try {
       Statement stmt;
-      ResultSet rs;
       Scanner scanner = new Scanner(new File(".env"));
       String password = scanner.nextLine();
       scanner.close();
@@ -91,8 +90,7 @@ public class Lab9 {
       ArrayList<String> queries = readXML("./libdata.xml");
       try {
         for (String query : queries) {
-          rs = stmt.executeQuery(query);
-          System.out.println(rs.getStatement());
+          stmt.executeQuery(query);
         }
       } catch (Exception e) {
         e.printStackTrace();
