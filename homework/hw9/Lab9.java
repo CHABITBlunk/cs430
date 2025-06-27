@@ -61,7 +61,9 @@ public class Lab9 {
           } else {
             java.util.Date cod = in.parse(codate);
             codate = out.format(cod);
-            query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
+            query += String.format(
+                "insert into borrowed(member_id, isbn, lib_name, checkout_date) values('%s', '%s', '%s', '%s');",
+                id, isbn, library, codate);
           }
           System.out.println(query);
           output.add(query);
