@@ -63,7 +63,7 @@ public class Lab9 {
             codate = out.format(cod);
             query += String.format("insert into borrowed values('%s', '%s', '%s', '%s');", id, isbn, library, codate);
           }
-          System.out.println("query: " + query);
+          System.out.println(query);
           output.add(query);
         }
       }
