@@ -1,0 +1,16 @@
+update borrowed set checkin_date = '2016-06-10' where member_id = '2011' and isbn = '96-42103-10800' and lib_name = 'Main';
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('2011', '96-42103-10011', 'South Park', '2016-06-10');
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('2011', '96-42103-10006', 'Main', '2016-06-10');
+update borrowed set checkin_date = '2016-06-10' where member_id = '2012' and isbn = '96-42103-10002' and lib_name = 'Main';
+skipping: isbn 96-42103-10604 not found in South Park
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('2012', '96-42103-10709', 'Main', '2016-06-10');
+skipping: isbn 97-34506-10709 not found in Main
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('1400', '96-42103-10022', 'South Park', '2016-06-10');
+update borrowed set checkin_date = '2016-06-11' where member_id = '2020' and isbn = '96-42103-10401' and lib_name = 'Main';
+skipping: isbn 96-42103-10709 not found in South Park
+update borrowed set checkin_date = '2016-06-11' where member_id = '2022' and isbn = '96-42103-11003' and lib_name = 'Main';
+update borrowed set checkin_date = '2016-06-11' where member_id = '2022' and isbn = '96-42103-10109' and lib_name = 'Main';
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('2022', '96-42103-10093', 'South Park', '2016-06-11');
+skipping: isbn 97-12413-10093 not found in Main
+insert into borrowed(member_id, isbn, lib_name, checkout_date) values('1800', '96-42103-10093', 'Main', '2016-06-11');
+skipping: isbn 96-42103-11709 not found in Main
