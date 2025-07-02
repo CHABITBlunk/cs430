@@ -76,7 +76,7 @@ public class Lab10Blunk {
       }
       rs = stmt.executeQuery(String.format(
           "select distinct b.isbn, b.title, a.first_name, a.last_name from book b join book_author ba on b.isbn = ba.isbn join author a on ba.author_id = a.author_id where title like '%%%s%%' or a.first_name like '%%%s%%' or a.last_name like '%%%s%%';",
-          input, input));
+          input, input, input));
       List<String> matchingISBNs = new ArrayList<>();
       List<String> descriptions = new ArrayList<>();
       int count = 0;
