@@ -1,19 +1,23 @@
 import java.sql.*;
 import java.util.*;
-// import javax.swing.JOptionPane;
 
 import java.io.File;
 
 public class Lab10Blunk {
 
-  static String getValueFromStdin(Scanner s, String message) {
+  private static String getValueFromStdin(Scanner s, String message) {
     System.out.print(message);
-    return s.next();
+    return s.nextLine().trim();
   }
 
-  public static void getOrCreateUser(Scanner s, Statement stmt) {
+  private static void getOrCreateMember(Scanner s, Statement stmt) {
     try {
       String memberID = getValueFromStdin(s, "What is your member ID?");
+      if (memberID.equalsIgnoreCase("exit") ||
+          memberID.equalsIgnoreCase("bye") ||
+          memberID.equalsIgnoreCase("quit")) {
+        System.exit(0);
+      }
       ResultSet potentialUser = stmt
           .executeQuery(String.format("select * from member where member_id = %s;", memberID));
       if (potentialUser.next()) {
@@ -22,10 +26,10 @@ public class Lab10Blunk {
         System.out.printf("Welcome, %s %s!%n", firstName, lastName);
       } else {
         System.out.println("I can't find you in our records, so let's set you up as a new user.");
-        String firstName = getValueFromStdin(s, "What is your first name?");
-        String lastName = getValueFromStdin(s, "What is your last name?");
-        String gender = getValueFromStdin(s, "What is your gender (m,f,x)?");
-        String dob = getValueFromStdin(s, "What is your date of birth? (yyyy-MM-dd format please)");
+        String firstName = getValueFromStdin(s, "First name: ");
+        String lastName = getValueFromStdin(s, "Last name: ");
+        String gender = getValueFromStdin(s, "Gender (m,f,x): ");
+        String dob = getValueFromStdin(s, "Date of birth (yyyy-MM-dd): ");
         stmt.executeUpdate(String.format("insert into member values(%s, '%s', '%s', '%s', '%s')",
             memberID, firstName, lastName, gender, dob));
         System.out.println("Welcome to our library system!");
@@ -35,45 +39,75 @@ public class Lab10Blunk {
     }
   }
 
-  public static void printResultSet(ResultSet rs) throws SQLException {
-    String libName = rs.getString(2);
-    int floorNumber = rs.getInt(3);
-    int shelfNumber = rs.getInt(4);
-    if (rs.getInt(1) > 0) {
-      System.out.printf("This book can be found at %s on the %dth floor in the %dth shelf%n",
-          libName, floorNumber, shelfNumber);
-    } else {
-      System.out.printf("No books available at library %s%n", libName);
-    }
-
+  private static void printResultSet(ResultSet rs) throws SQLException {
+    boolean foundAny = false, foundAvailable = false;
     while (rs.next()) {
-      if (rs.getInt(1) > 0) {
+      foundAny = true;
+      int copies = rs.getInt("copies_available");
+      String libName = rs.getString("lib_name");
+      int floorNumber = rs.getInt("floor_number");
+      int shelfNumber = rs.getInt("shelf_number");
+      if (copies > 0) {
+        foundAvailable = true;
         System.out.printf("This book can be found at %s on the %dth floor in the %dth shelf%n",
             libName, floorNumber, shelfNumber);
       } else {
         System.out.printf("No books available at library %s%n", libName);
       }
     }
+    if (!foundAvailable && foundAny) {
+      System.out.println("All copies are currently checked out");
+    }
+    if (!foundAny) {
+      System.out.println("This book is not in the library system");
+    }
   }
 
-  public static void findBook(Scanner s, Statement stmt) {
+  private static void findBook(Scanner s, Statement stmt) {
     try {
-      String input = getValueFromStdin(s, "Enter a book ISBN, title, or author:");
+      String input = getValueFromStdin(s, "Enter a book ISBN, title, or author: ");
       ResultSet rs;
       if (input.matches("[0-9\\-]+")) {
         rs = stmt.executeQuery(String.format(
             "select copies_available, lib_name, shelf_number, floor_number from located_at where isbn = '%s';",
             input));
-      } else {
-        rs = stmt.executeQuery(
-            String.format(
-                "select copies_available, lib_name, shelf_number, floor_number from located_at where author like  '%%%s%%' or title like '%%%s%%';",
-                input, input));
-      }
-      if (rs.next()) {
         printResultSet(rs);
-      } else {
-        System.out.println("We don't have this book in stock.");
+        return;
+      }
+      rs = stmt.executeQuery(String.format(
+          "select distinct isbn, title, author from book where title like '%%%s%%' or author like '%%%s%%';",
+          input, input));
+      List<String> matchingISBNs = new ArrayList<>();
+      List<String> descriptions = new ArrayList<>();
+      int count = 0;
+      while (rs.next()) {
+        String isbn = rs.getString("isbn");
+        String title = rs.getString("title");
+        String author = rs.getString("author");
+        matchingISBNs.add(isbn);
+        descriptions.add(String.format("[%d] *%s* by %s (isbn: %s)", ++count, title, author, isbn));
+        if (matchingISBNs.isEmpty()) {
+          System.out.println("No matching books found");
+          return;
+        }
+        for (String description : descriptions) {
+          System.out.println(description);
+        }
+        int selection = -1;
+        while (selection < 1 || selection > matchingISBNs.size()) {
+          try {
+            String choice = getValueFromStdin(s,
+                "Enter the number of the book for which you'd like to check availability: ");
+            selection = Integer.parseInt(choice);
+          } catch (NumberFormatException e) {
+            System.out.println("Invalid input, please enter a number from the list");
+          }
+        }
+        String chosenISBN = matchingISBNs.get(selection - 1);
+        rs = stmt.executeQuery(String.format(
+            "select copies_available, lib_name, shelf_number, floor_number from located_at where isbn = '%s';",
+            chosenISBN));
+        printResultSet(rs);
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -92,8 +126,10 @@ public class Lab10Blunk {
       con = DriverManager.getConnection(url, username, password);
       stmt = con.createStatement();
       Scanner stdin = new Scanner(System.in);
-      getOrCreateUser(stdin, stmt);
-      con.close();
+      while (true) {
+        getOrCreateMember(stdin, stmt);
+        findBook(stdin, stmt);
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
