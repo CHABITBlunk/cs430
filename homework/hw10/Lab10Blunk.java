@@ -49,7 +49,7 @@ public class Lab10Blunk {
       int shelfNumber = rs.getInt("shelf_number");
       if (copies > 0) {
         foundAvailable = true;
-        System.out.printf("This book can be found at %s on the %dth floor in the %dth shelf%n",
+        System.out.printf("This book can be found at %s on floor %d in shelf %d%n",
             libName, floorNumber, shelfNumber);
       } else {
         System.out.printf("No books available at library %s%n", libName);
@@ -87,10 +87,11 @@ public class Lab10Blunk {
         String authorLast = rs.getString("last_name");
         matchingISBNs.add(isbn);
         descriptions.add(String.format("[%d] *%s* by %s %s (isbn: %s)", ++count, title, authorFirst, authorLast, isbn));
-        if (matchingISBNs.isEmpty()) {
-          System.out.println("No matching books found");
-          return;
-        }
+      }
+      if (count == 0) {
+        System.out.println("No matching books found");
+        return;
+      } else if (count > 1) {
         for (String description : descriptions) {
           System.out.println(description);
         }
@@ -108,6 +109,11 @@ public class Lab10Blunk {
         rs = stmt.executeQuery(String.format(
             "select copies_available, lib_name, shelf_number, floor_number from located_at where isbn = '%s';",
             chosenISBN));
+        printResultSet(rs);
+      } else {
+        rs = stmt.executeQuery(String.format(
+            "select copies_available, lib_name, shelf_number, floor_number from located_at where isbn = '%s';",
+            matchingISBNs.get(0)));
         printResultSet(rs);
       }
     } catch (Exception e) {
