@@ -12,7 +12,7 @@ public class Lab10Blunk {
 
   private static void getOrCreateMember(Scanner s, Statement stmt) {
     try {
-      String memberID = getValueFromStdin(s, "What is your member ID?");
+      String memberID = getValueFromStdin(s, "What is your member ID? ");
       if (memberID.equalsIgnoreCase("exit") ||
           memberID.equalsIgnoreCase("bye") ||
           memberID.equalsIgnoreCase("quit")) {
