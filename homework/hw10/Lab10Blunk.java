@@ -83,9 +83,10 @@ public class Lab10Blunk {
       while (rs.next()) {
         String isbn = rs.getString("isbn");
         String title = rs.getString("title");
-        String author = rs.getString("author");
+        String authorFirst = rs.getString("first_name");
+        String authorLast = rs.getString("last_name");
         matchingISBNs.add(isbn);
-        descriptions.add(String.format("[%d] *%s* by %s (isbn: %s)", ++count, title, author, isbn));
+        descriptions.add(String.format("[%d] *%s* by %s %s (isbn: %s)", ++count, title, authorFirst, authorLast, isbn));
         if (matchingISBNs.isEmpty()) {
           System.out.println("No matching books found");
           return;
