@@ -1,0 +1,170 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{array}
+
+\title{Module 12: Concurrency protocols}
+\author{Habit Blunk}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Sequence S1}
+  \begin{enumerate}
+    \item T1: R(X)
+    \item T2: W(X)
+    \item T2: W(Y)
+    \item T3: W(Y)
+    \item T1: W(Y)
+    \item T1: commit
+    \item T2: commit
+    \item T3: commit
+  \end{enumerate}
+
+
+  \subsection*{1. Rigorous 2PL with timestamps using wait-die}
+  \begin{enumerate}
+    \item T1: S-lock(X) -> R(X)
+    \item T2: X-lock(X) -> conflict -> T2 dies, remains in queue
+    \item T3: X-lock(Y) -> W(Y)
+    \item T1: X-lock(Y) -> conflict -> T1 waits, actions (W(Y), commit) queued
+    \item T3: commit -> unlock Y -> T1 resumes
+    \item T1: X-lock(Y) -> T1: W(Y)
+    \item T1: commit -> unlock X, Y -> T2 restarts
+    \item T2: X-lock(X) -> W(X)
+    \item T2: X-lock(Y) -> W(Y)
+    \item T2: commit -> unlock X, Y
+  \end{enumerate}
+
+
+  \subsection*{2. Rigorous 2PL with deadlock detection}
+  \begin{enumerate}
+    \item T1: S-lock(X) -> R(X)
+    \item T2: X-lock(X) -> T2 waits, add new edge (T2 -> T1) to graph
+    \item T2: queue W(X) and X-lock(Y)
+    \item T3: X-lock(Y) -> W(Y)
+    \item T1: X-lock(Y) held -> T1 waits, add new edge (T1 -> T3) to graph
+    \item T3: commit -> unlock Y -> T1 resumes
+    \item T1: X-lock(Y) -> W(Y) -> commit -> unlock X, Y -> T2 restarts
+    \item T2: X-lock(X) -> W(X) -> X-lock(Y) -> W(Y) -> commit -> unlock X, Y
+  \end{enumerate}
+  Waits-for graph
+  \begin{itemize}
+    \item T2 -> T1
+    \item T1 -> T3
+  \end{itemize}
+
+
+  \subsection*{3. Timestamp concurrency control with buffering and Thomas write rule}
+  \begin{enumerate}
+    \item T1: R(X) - ok
+    \item T2: W(X) - TS(T2) = 2 \geq R_TS(X) = 1 -> ok -> W_TS(X) = 2
+    \item T2: W(Y) - ok
+    \item T3: W(Y) - TS(T3) = 3 \geq W_TS(Y) = 2 -> ok -> W_TS(Y) = 3
+    \item T1: W(Y) - TS(T1) = 1 < W_TS(Y) = 3 -> ignored because obsolete
+    \item T1: commit - ok
+    \item T2: commit - ok
+    \item T3: commit - ok
+  \end{enumerate}
+
+  
+  \subsection*{4. Validation (optimistic)}
+  T1 reads X, writes Y; T2 writes X and Y; T3 writes Y. T1 must commit before T2 to be safe. T1 writes Y, T3 also writes Y -> conflict if overlapping.
+  Assuming timestamps reflect validation order, T1 and T2 likely commit, but T3 may abort due to write-write conflict.
+
+  \subsection*{5. MVTO}
+  \begin{enumerate}
+    \item T1: R(X) - ok, reads version with W_TS <= 1
+    \item T2: W(X) - ok, new version with W_TS = 2
+    \item T2: W(Y) - ok, new version with W_TS = 2
+    \item T3: W(Y) - ok, new version with W_TS = 3
+    \item T1: W(Y) - W_TS(Y) = 3, TS=1 < W_TS -> reject
+    \item T1 aborts
+    \item T2 commits
+    \item T3 commits
+  \end{enumerate}
+
+
+
+\section*{Sequence S2}
+  \begin{enumerate}
+    \item T1: R(X)
+    \item T2: W(Y)
+    \item T2: W(X)
+    \item T3: W(Y)
+    \item T1: W(Y)
+    \item T1: commit
+    \item T2: commit
+    \item T3: commit
+  \end{enumerate}
+
+
+  \subsection*{1. Rigorous 2PL with timestamps using wait-die}
+  \begin{enumerate}
+    \item T1: S-lock(X) -> R(X)
+    \item T2: X-lock(Y) -> W(Y)
+    \item T2: X-lock(X) -> conflict -> T2 dies, put remaining actions in queue
+    \item T3: X-lock(Y) -> W(Y)
+    \item T1: X-lock(Y) -> conflict -> T1 waits 
+    \item T1: commit (can't because it's waiting)
+    \item T3: commit
+    \item T1: X-lock(Y) -> W(Y)
+    \item T1: commit
+    \item T2: restarts
+    \item T2: X-lock(Y) -> W(Y)
+    \item T2: X-lock(X) -> W(X)
+    \item T2: commit
+  \end{enumerate}
+
+
+  \subsection*{2. Rigorous 2PL with deadlock detection}
+  \begin{enumerate}
+    \item T1: S-lock(X) -> R(X)
+    \item T2: X-lock(Y) -> W(Y)
+    \item T2: X-lock(X) -> T2 waits, add new edge (T2 -> T1) to graph
+    \item T3: X-lock(Y) -> T3 waits, add new edge (T3 -> T2) to graph
+    \item T1: X-lock(Y) held -> T1 waits, add new edge (T1 -> T2) to graph
+    \item Deadlock detected -> T2 aborted, releases locks
+    \item T1: X-lock(Y) -> W(Y) -> commit
+    \item T3: X-lock(Y) -> W(Y) -> commit -> unlock X, Y -> T2 restarts
+    \item T2: X-lock(X) -> W(X) -> commit -> unlock X, Y
+  \end{enumerate}
+  Waits-for graph
+  \begin{itemize}
+    \item T2 -> T1
+    \item T3 -> T2
+    \item T1 -> T2
+  \end{itemize}
+
+
+  \subsection*{3. Timestamp concurrency control with buffering and Thomas write rule}
+  \begin{enumerate}
+    \item T1: R(X) - ok
+    \item T2: W(Y) - ok
+    \item T2: W(X) - ok
+    \item T3: W(Y) - ok
+    \item T1: W(Y) - ignored because obsolete
+    \item T1: commit - ok
+    \item T2: commit - ok
+    \item T3: commit - ok
+  \end{enumerate}
+
+  
+  \subsection*{4. Validation (optimistic)}
+  T1 reads X, writes Y; T2 writes X and Y; T3 writes Y. T1 must commit before T2 to be safe. T1 writes Y, T3 also writes Y -> conflict if overlapping.
+  Assuming timestamps reflect validation order, T1 and T2 likely commit, but T3 may abort due to write-write conflict.
+
+  \subsection*{5. MVTO}
+  \begin{enumerate}
+    \item T1: R(X) - ok, reads version with W_TS <= 1
+    \item T2: W(Y) - ok, new version with W_TS = 2
+    \item T2: W(X) - ok, new version with W_TS = 2
+    \item T3: W(Y) - ok, new version with W_TS = 3
+    \item T1: W(Y) - W_TS(Y) = 3, TS=1 < W_TS -> reject
+    \item T1 aborts
+    \item T2 commits
+    \item T3 commits
+  \end{enumerate}
+
+\end{document}
