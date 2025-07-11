@@ -1,0 +1,35 @@
+\documentclass[fleqn]{article}
+\usepackage{amsmath}
+\usepackage{array}
+
+\title{Module 13: Recovery}
+\author{Habit Blunk}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[h!]
+\centering
+  \begin{tabular}{|c|c|c|l|c|c|}
+  \hline
+    \textbf{LSN} & \textbf{TID} & \textbf{type} & \textbf{action} & \textbf{prevLSN} & \textbf{undoNextLSN} \\
+  \hline
+    00  & T1  & write & P2                  & -   & -   \\
+    10  & T1  & write & P1                  & 00  & -   \\
+    20  & T2  & write & P5                  & -   & -   \\
+    30  & T3  & write & P3                  & -   & -   \\
+    40  & T3  & commit & -                  & 30  & -   \\
+    50  & T2  & write & P5                  & 20  & -   \\
+    60  & T2  & write & P3                  & 50  & -   \\
+    70  & T2  & abort & -                   & 60  & -   \\
+    80  & T2  & CLR   & undo write P3 (60)  & 70  & 50  \\
+    90  & T2  & CLR   & undo write P5 (50)  & 80  & 20  \\
+    100 & T2  & CLR   & undo write P5 (20)  & 90  & -   \\
+    110 & T2  & end   & -                   & 100 & -   \\
+  \hline
+  \end{tabular}
+\end{table}
+
+\end{document}
